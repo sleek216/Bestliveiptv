@@ -70,9 +70,14 @@
                             <small class="text-muted">Required for handling webhook events</small>
                         </div>
 
-                        <button type="submit" class="btn btn-primary">
-                            <i class="bi bi-check-lg me-2"></i>Save Settings
-                        </button>
+                        <div class="d-flex gap-2">
+                            <button type="submit" class="btn btn-primary">
+                                <i class="bi bi-check-lg me-2"></i>Save Settings
+                            </button>
+                            <button type="button" class="btn btn-outline-primary" id="testStripeBtn" onclick="testStripeConnection()">
+                                <i class="bi bi-wifi me-2"></i>Test Connection
+                            </button>
+                        </div>
                     </form>
                 </div>
             </div>
@@ -97,7 +102,7 @@
                 <div class="card-body">
                     <ol class="small mb-0">
                         <li class="mb-2">Go to Stripe Dashboard → Developers → API keys</li>
-                        <li class="mb-2">Copy your Publishable and Secret keys</li>
+                        <li class="mb-2">Copy your Publishable and Secret keys (Live mode keys start with <code>pk_live_</code> and <code>sk_live_</code>)</li>
                         <li class="mb-2">Go to Webhooks → Add endpoint</li>
                         <li class="mb-2">Paste the webhook URL above</li>
                         <li class="mb-2">Select events: <code>checkout.session.completed</code>, <code>payment_intent.payment_failed</code></li>
@@ -107,4 +112,46 @@
             </div>
         </div>
     </div>
+
+    <script>
+        function testStripeConnection() {
+            const btn = document.getElementById('testStripeBtn');
+            const originalText = btn.innerHTML;
+            const secretKey = document.getElementById('stripe_secret_key').value;
+
+            btn.disabled = true;
+            btn.innerHTML = '<span class="spinner-border spinner-border-sm me-2"></span>Testing...';
+
+            fetch('{{ route('admin.settings.test-stripe') }}', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRF-TOKEN': '{{ csrf_token() }}'
+                },
+                body: JSON.stringify({
+                    stripe_secret_key: secretKey
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                btn.disabled = false;
+                btn.innerHTML = originalText;
+                
+                if (data.success) {
+                    let msg = '✓ ' + data.message;
+                    if (data.warning) {
+                        msg += '\n\n' + data.warning;
+                    }
+                    alert(msg);
+                } else {
+                    alert('✗ Connection Failed:\n' + (data.error || 'Unknown error'));
+                }
+            })
+            .catch(error => {
+                btn.disabled = false;
+                btn.innerHTML = originalText;
+                alert('✗ Connection test failed. Please check your network or API keys.');
+            });
+        }
+    </script>
 @endsection

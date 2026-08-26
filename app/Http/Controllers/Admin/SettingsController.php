@@ -61,13 +61,66 @@ class SettingsController extends Controller
 
         Setting::set('stripe_enabled', $request->boolean('stripe_enabled') ? '1' : '0');
         Setting::set('stripe_mode', $validated['stripe_mode']);
-        Setting::set('stripe_publishable_key', $validated['stripe_publishable_key'] ?? '');
-        Setting::set('stripe_secret_key', $validated['stripe_secret_key'] ?? '');
-        Setting::set('stripe_webhook_secret', $validated['stripe_webhook_secret'] ?? '');
+        Setting::set('stripe_publishable_key', trim($validated['stripe_publishable_key'] ?? ''));
+        Setting::set('stripe_secret_key', trim($validated['stripe_secret_key'] ?? ''));
+        Setting::set('stripe_webhook_secret', trim($validated['stripe_webhook_secret'] ?? ''));
 
         return redirect()
             ->route('admin.settings.stripe')
             ->with('success', 'Stripe settings updated successfully!');
+    }
+
+    public function testStripe(Request $request)
+    {
+        try {
+            $secretKey = $request->input('stripe_secret_key') !== null && $request->input('stripe_secret_key') !== ''
+                ? trim($request->input('stripe_secret_key')) 
+                : trim(Setting::get('stripe_secret_key', ''));
+
+            if (empty($secretKey)) {
+                return response()->json([
+                    'success' => false,
+                    'error' => 'Please enter a Stripe Secret Key before testing.'
+                ]);
+            }
+
+            \Stripe\Stripe::setApiKey($secretKey);
+
+            // Retrieve account information to verify credentials and live status
+            $account = \Stripe\Account::retrieve();
+
+            $chargesEnabled = $account->charges_enabled ?? false;
+            $country = $account->country ?? 'Unknown';
+            $defaultCurrency = strtoupper($account->default_currency ?? 'USD');
+            $businessName = $account->business_profile->name ?? $account->settings->dashboard->display_name ?? 'Stripe Account';
+
+            $warning = null;
+            if (!$chargesEnabled) {
+                $warning = 'Live charges are currently DISABLED on this Stripe account. Please check your Stripe Dashboard to complete any pending identity or business verifications.';
+            }
+
+            return response()->json([
+                'success' => true,
+                'message' => "Stripe API Key is valid and connected! (Account: {$businessName}, Country: {$country}, Currency: {$defaultCurrency})",
+                'charges_enabled' => $chargesEnabled,
+                'warning' => $warning
+            ]);
+        } catch (\Stripe\Exception\AuthenticationException $e) {
+            return response()->json([
+                'success' => false,
+                'error' => 'Authentication Failed: Invalid Stripe Secret Key. (' . $e->getMessage() . ')'
+            ]);
+        } catch (\Stripe\Exception\PermissionException $e) {
+            return response()->json([
+                'success' => false,
+                'error' => 'Permission Denied: ' . $e->getMessage()
+            ]);
+        } catch (\Exception $e) {
+            return response()->json([
+                'success' => false,
+                'error' => 'Stripe Error: ' . $e->getMessage()
+            ]);
+        }
     }
 
     public function email(): View

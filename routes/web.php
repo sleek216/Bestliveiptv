@@ -204,6 +204,7 @@ Route::prefix('admin')->middleware('admin')->name('admin.')->group(function () {
         Route::put('settings', [AdminSettingsController::class, 'update'])->name('settings.update');
         Route::get('settings/stripe', [AdminSettingsController::class, 'stripe'])->name('settings.stripe');
         Route::put('settings/stripe', [AdminSettingsController::class, 'updateStripe'])->name('settings.update-stripe');
+        Route::post('settings/stripe/test', [AdminSettingsController::class, 'testStripe'])->name('settings.test-stripe');
         Route::get('settings/email', [AdminSettingsController::class, 'email'])->name('settings.email');
         Route::put('settings/email', [AdminSettingsController::class, 'updateEmail'])->name('settings.update-email');
         Route::post('settings/email/test', [AdminSettingsController::class, 'testEmail'])->name('settings.test-email');

@@ -24,7 +24,7 @@ class StripeController extends Controller
 
     protected function initializeStripe(): void
     {
-        $secretKey = Setting::get('stripe_secret_key');
+        $secretKey = trim(Setting::get('stripe_secret_key', ''));
         if ($secretKey) {
             Stripe::setApiKey($secretKey);
         } else {
@@ -45,13 +45,15 @@ class StripeController extends Controller
         }
 
         // Check if Stripe is configured
-        $secretKey = Setting::get('stripe_secret_key');
+        $secretKey = trim(Setting::get('stripe_secret_key', ''));
         if (!$secretKey) {
             \Log::error('StripeController: Attempted checkout but Stripe Secret Key is not set.');
             return redirect()
                 ->route('checkout.pending', $order->order_number)
                 ->with('error', 'Payment gateway is not configured. Please contact support.');
         }
+
+        Stripe::setApiKey($secretKey);
 
         try {
             \Log::info('StripeController: Creating session for Order ' . $order->order_number . ' Amount: ' . $order->amount);
@@ -62,10 +64,10 @@ class StripeController extends Controller
                     'price_data' => [
                         'currency' => 'usd',
                         'product_data' => [
-                            'name' => $order->package->name,
-                            'description' => $order->package->description ?? 'IPTV Subscription Package',
+                            'name' => $order->package->name ?? 'IPTV Subscription Package',
+                            'description' => substr($order->package->description ?? 'IPTV Subscription Package', 0, 500),
                         ],
-                        'unit_amount' => (int) ($order->amount * 100),
+                        'unit_amount' => (int) round($order->amount * 100),
                     ],
                     'quantity' => 1,
                 ]],

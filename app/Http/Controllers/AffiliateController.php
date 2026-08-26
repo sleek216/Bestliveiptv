@@ -100,12 +100,12 @@ class AffiliateController extends Controller
         $validated = $request->validate([
             'amount' => 'required|numeric|min:1',
             'payment_method' => 'required|in:paypal,bank_transfer,crypto',
-            'paypal_email' => 'required_if:payment_method,paypal|email',
-            'bank_name' => 'required_if:payment_method,bank_transfer',
-            'account_number' => 'required_if:payment_method,bank_transfer',
-            'account_holder' => 'required_if:payment_method,bank_transfer',
-            'crypto_address' => 'required_if:payment_method,crypto',
-            'crypto_network' => 'required_if:payment_method,crypto',
+            'paypal_email' => 'nullable|required_if:payment_method,paypal|email',
+            'bank_name' => 'nullable|required_if:payment_method,bank_transfer',
+            'account_number' => 'nullable|required_if:payment_method,bank_transfer',
+            'account_holder' => 'nullable|required_if:payment_method,bank_transfer',
+            'crypto_address' => 'nullable|required_if:payment_method,crypto',
+            'crypto_network' => 'nullable|required_if:payment_method,crypto',
         ]);
 
         // Check if amount is available

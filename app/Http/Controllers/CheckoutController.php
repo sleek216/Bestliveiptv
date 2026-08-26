@@ -88,7 +88,7 @@ class CheckoutController extends Controller
             'payment_method' => 'required|in:stripe,crypto',
             'selected_countries' => 'nullable|array',
             'referral_code' => 'nullable|string|max:20',
-            'crypto_currency' => 'required_if:payment_method,crypto|string',
+            'crypto_currency' => 'nullable|required_if:payment_method,crypto|string',
         ]);
 
         // Validate Payment Method Availability

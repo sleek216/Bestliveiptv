@@ -121,8 +121,12 @@ Route::middleware('guest')->group(function () {
     // Password Reset Routes
     Route::get('/forgot-password', [AuthController::class, 'showForgotPassword'])->name('password.request');
     Route::post('/forgot-password', [AuthController::class, 'sendResetLink'])->name('password.email');
+    Route::get('/forgot_password', [AuthController::class, 'showForgotPassword']);
+    Route::post('/forgot_password', [AuthController::class, 'sendResetLink']);
     Route::get('/reset-password/{token}', [AuthController::class, 'showResetPassword'])->name('password.reset');
     Route::post('/reset-password', [AuthController::class, 'resetPassword'])->name('password.update');
+    Route::get('/reset_password/{token}', [AuthController::class, 'showResetPassword']);
+    Route::post('/reset_password', [AuthController::class, 'resetPassword']);
     
     // 2FA Routes
     Route::get('/2fa', [TwoFactorController::class, 'showVerification'])->name('2fa.show');

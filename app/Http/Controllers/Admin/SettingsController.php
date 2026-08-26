@@ -39,6 +39,7 @@ class SettingsController extends Controller
     {
         $settings = [
             'stripe_enabled' => Setting::get('stripe_enabled', '0'),
+            'stripe_mode' => Setting::get('stripe_mode', 'test'),
             'stripe_publishable_key' => Setting::get('stripe_publishable_key', ''),
             'stripe_secret_key' => Setting::get('stripe_secret_key', ''),
             'stripe_webhook_secret' => Setting::get('stripe_webhook_secret', ''),
@@ -52,12 +53,14 @@ class SettingsController extends Controller
     {
         $validated = $request->validate([
             'stripe_enabled' => 'boolean',
+            'stripe_mode' => 'required|in:test,live',
             'stripe_publishable_key' => 'nullable|string|max:255',
             'stripe_secret_key' => 'nullable|string|max:255',
             'stripe_webhook_secret' => 'nullable|string|max:255',
         ]);
 
         Setting::set('stripe_enabled', $request->boolean('stripe_enabled') ? '1' : '0');
+        Setting::set('stripe_mode', $validated['stripe_mode']);
         Setting::set('stripe_publishable_key', $validated['stripe_publishable_key'] ?? '');
         Setting::set('stripe_secret_key', $validated['stripe_secret_key'] ?? '');
         Setting::set('stripe_webhook_secret', $validated['stripe_webhook_secret'] ?? '');

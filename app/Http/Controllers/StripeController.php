@@ -85,8 +85,8 @@ class StripeController extends Controller
             $order->update(['stripe_session_id' => $session->id]);
 
             return redirect($session->url);
-        } catch (ApiErrorException $e) {
-            \Log::error('StripeController: Stripe API Error: ' . $e->getMessage());
+        } catch (\Throwable $e) {
+            \Log::error('StripeController: Stripe Error: ' . $e->getMessage());
             
             $order->update([
                 'payment_status' => 'failed',

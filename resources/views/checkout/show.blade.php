@@ -35,7 +35,14 @@
                 @if($errors->any())
                 <div class="alert alert-error">
                     <i class="ph-fill ph-x-circle"></i>
-                    <span>Please fix the errors below and try again.</span>
+                    <div>
+                        <span style="font-weight: 600;">Please fix the following errors:</span>
+                        <ul style="margin: 0.35rem 0 0 1.25rem; padding: 0; font-size: 0.875rem;">
+                            @foreach($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
                 </div>
                 @endif
                 

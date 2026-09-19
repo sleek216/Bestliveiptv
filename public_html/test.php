@@ -45,6 +45,9 @@ header('Content-Type: text/html; charset=utf-8');
         $envPaths = [
             __DIR__ . '/../.env',
             __DIR__ . '/.env',
+            __DIR__ . '/../repo/.env',
+            '/home/liveservice/.env',
+            '/home/liveservice/repo/.env',
             '/home/bestliveiptv/.env'
         ];
         $foundEnv = false;
@@ -56,7 +59,7 @@ header('Content-Type: text/html; charset=utf-8');
             }
         }
         if (!$foundEnv) {
-            echo '<span class="status-fail">✖ .env file NOT found! Make sure /home/bestliveiptv/.env exists.</span>';
+            echo '<span class="status-fail">✖ .env file NOT found! Make sure .env exists in /home/liveservice/.env or /home/liveservice/repo/.env</span>';
         }
         ?>
     </div>
@@ -67,6 +70,9 @@ header('Content-Type: text/html; charset=utf-8');
         $vendorPaths = [
             __DIR__ . '/../vendor/autoload.php',
             __DIR__ . '/vendor/autoload.php',
+            __DIR__ . '/../repo/vendor/autoload.php',
+            '/home/liveservice/vendor/autoload.php',
+            '/home/liveservice/repo/vendor/autoload.php',
             '/home/bestliveiptv/vendor/autoload.php'
         ];
         $foundVendor = false;
@@ -78,7 +84,7 @@ header('Content-Type: text/html; charset=utf-8');
             }
         }
         if (!$foundVendor) {
-            echo '<span class="status-fail">✖ Missing! vendor folder not found in /home/bestliveiptv/</span>';
+            echo '<span class="status-fail">✖ Missing! vendor folder not found in /home/liveservice/ or /home/liveservice/repo/</span>';
         }
         ?>
     </div>

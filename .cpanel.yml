@@ -1,9 +1,10 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/bestliveiptv/public_html/
-    - /bin/cp -R * /home/bestliveiptv/
+    - export DEPLOYPATH=/home/liveservice/public_html/
+    - /bin/cp -R * /home/liveservice/
     - /bin/cp -R public_html/* $DEPLOYPATH
-    - /bin/cp .htaccess /home/bestliveiptv/
+    - /bin/cp .htaccess /home/liveservice/
     - /bin/cp public_html/.htaccess $DEPLOYPATH
-    - /bin/chmod -R 775 /home/bestliveiptv/storage /home/bestliveiptv/bootstrap/cache
+    - /bin/rm -f $DEPLOYPATH/index.html
+    - /bin/chmod -R 775 /home/liveservice/storage /home/liveservice/bootstrap/cache

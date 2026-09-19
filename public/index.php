@@ -8,6 +8,8 @@ define('LARAVEL_START', microtime(true));
 // Determine if the application is in maintenance mode...
 if (file_exists($maintenance = __DIR__.'/../storage/framework/maintenance.php')) {
     require $maintenance;
+} elseif (file_exists($maintenance = __DIR__.'/../repo/storage/framework/maintenance.php')) {
+    require $maintenance;
 } elseif (file_exists($maintenance = __DIR__.'/storage/framework/maintenance.php')) {
     require $maintenance;
 }
@@ -15,6 +17,8 @@ if (file_exists($maintenance = __DIR__.'/../storage/framework/maintenance.php'))
 // Register the Composer autoloader...
 if (file_exists(__DIR__.'/../vendor/autoload.php')) {
     require __DIR__.'/../vendor/autoload.php';
+} elseif (file_exists(__DIR__.'/../repo/vendor/autoload.php')) {
+    require __DIR__.'/../repo/vendor/autoload.php';
 } elseif (file_exists(__DIR__.'/vendor/autoload.php')) {
     require __DIR__.'/vendor/autoload.php';
 }
@@ -23,6 +27,8 @@ if (file_exists(__DIR__.'/../vendor/autoload.php')) {
 /** @var Application $app */
 if (file_exists(__DIR__.'/../bootstrap/app.php')) {
     $app = require_once __DIR__.'/../bootstrap/app.php';
+} elseif (file_exists(__DIR__.'/../repo/bootstrap/app.php')) {
+    $app = require_once __DIR__.'/../repo/bootstrap/app.php';
 } else {
     $app = require_once __DIR__.'/bootstrap/app.php';
 }

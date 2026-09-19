@@ -31,8 +31,8 @@
             <div class="step-item" data-aos="fade-up">
                 <div class="step-content">
                     <div class="step-number">01</div>
-                    <h3>Choose Your Plan</h3>
-                    <p>Browse our subscription plans and select the one that best fits your needs. We offer plans for individuals and families with various durations from 1 month to 12 months.</p>
+                    <h3>Choose Your Service</h3>
+                    <p>Browse our subscription services and select the one that best fits your needs. We offer services for individuals and families with various durations from 1 month to 12 months.</p>
                     <ul class="step-features">
                         <li><i class="ph-fill ph-check"></i> 1 to 4 device connections</li>
                         <li><i class="ph-fill ph-check"></i> Flexible duration options</li>
@@ -40,7 +40,7 @@
                     </ul>
                     <a href="{{ route('packages.index') }}" class="btn btn-primary">
                         <i class="ph ph-package"></i>
-                        View Plans
+                        View Services
                     </a>
                 </div>
                 <div class="step-visual">
@@ -237,7 +237,7 @@
             <div class="cta-buttons">
                 <a href="{{ route('packages.index') }}" class="btn btn-primary btn-lg">
                     <i class="ph ph-shopping-cart"></i>
-                    View Plans
+                    View Services
                 </a>
                 <a href="{{ route('packages.index') }}?duration=trial" class="btn btn-white btn-lg">
                     <i class="ph ph-play-circle"></i>

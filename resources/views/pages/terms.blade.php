@@ -61,7 +61,7 @@
                         <li>All activities that occur under your account</li>
                         <li>Notifying us immediately of any unauthorized access</li>
                     </ul>
-                    <p>You may not use your account for any illegal or unauthorized purpose, nor may you share your credentials with others beyond the number of connections allowed by your subscription plan.</p>
+                    <p>You may not use your account for any illegal or unauthorized purpose, nor may you share your credentials with others beyond the number of connections allowed by your subscription service.</p>
                 </section>
                 
                 <section id="payments">

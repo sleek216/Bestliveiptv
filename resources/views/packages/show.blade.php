@@ -13,7 +13,7 @@
         <div class="package-hero-content">
             <a href="{{ route('packages.index') }}" class="back-link" data-aos="fade-right">
                 <i class="ph ph-arrow-left"></i>
-                Back to All Plans
+                Back to All Services
             </a>
             
             <div class="package-header" data-aos="fade-up">
@@ -152,7 +152,7 @@
                     
                     <div class="order-details">
                         <div class="detail-row">
-                            <span>Plan Price</span>
+                            <span>Service Price</span>
                             <span>${{ number_format($package->price, 2) }}</span>
                         </div>
                         <div class="detail-row">
@@ -201,7 +201,7 @@
 <!-- Related Services -->
 <section class="related-section">
     <div class="container">
-        <h2 class="section-title" data-aos="fade-up">Other Plans You Might Like</h2>
+        <h2 class="section-title" data-aos="fade-up">Other Services You Might Like</h2>
         
         <div class="related-grid">
             @foreach($relatedPackages ?? [] as $related)
@@ -215,7 +215,7 @@
                     <span class="connections">{{ $related->connections }} {{ $related->connections > 1 ? 'Connections' : 'Connection' }}</span>
                 </div>
                 <a href="{{ route('packages.show', $related->slug) }}" class="btn btn-outline btn-sm btn-block">
-                    View Plan
+                    View Service
                 </a>
             </div>
             @endforeach

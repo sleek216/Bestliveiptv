@@ -87,7 +87,7 @@
     <!-- Announcement Bar -->
     @php
         $announcementEnabled = \App\Models\Setting::get('announcement_enabled', '1');
-        $announcementText = \App\Models\Setting::get('announcement_text', 'Get <strong>50% OFF</strong> on annual plans — Use code: <code>LIVE50</code>');
+        $announcementText = \App\Models\Setting::get('announcement_text', 'Get <strong>50% OFF</strong> on annual services — Use code: <code>LIVE50</code>');
         $announcementLink = \App\Models\Setting::get('announcement_link', '/packages');
         $announcementLinkText = \App\Models\Setting::get('announcement_link_text', 'Shop Now');
     @endphp
@@ -336,7 +336,7 @@
                         <h4 class="footer-title">{{ __('Quick Links') }}</h4>
                         <ul class="footer-links">
                             <li><a href="{{ route('home') }}"><i class="ph ph-caret-right"></i> {{ __('Home') }}</a></li>
-                            <li><a href="{{ route('packages.index') }}"><i class="ph ph-caret-right"></i> {{ __('Pricing Plans') }}</a></li>
+                            <li><a href="{{ route('packages.index') }}"><i class="ph ph-caret-right"></i> {{ __('Pricing Services') }}</a></li>
                             <li><a href="{{ route('channels') }}"><i class="ph ph-caret-right"></i> {{ __('Channel List') }}</a></li>
                             <li><a href="{{ route('reseller.index') }}"><i class="ph ph-caret-right"></i> {{ __('Reseller Program') }}</a></li>
                             <li><a href="{{ route('blog.index') }}"><i class="ph ph-caret-right"></i> {{ __('Blog & News') }}</a></li>
@@ -584,7 +584,7 @@
         <div class="sales-notification-content">
             <p class="sales-text">
                 <span class="sales-name font-bold">John</span> from <span class="sales-country font-bold">UK</span>
-                purchased a <span class="sales-plan">12 Months Plan</span>
+                purchased a <span class="sales-plan">12 Months Service</span>
             </p>
             <small class="sales-time text-gray-500">2 mins ago</small>
         </div>
@@ -676,7 +676,7 @@
         document.addEventListener('DOMContentLoaded', function() {
             const names = ['John', 'Sarah', 'Michael', 'Emma', 'David', 'James', 'Robert', 'Maria', 'Mohammed', 'Ali'];
             const countries = ['UK', 'USA', 'Canada', 'Australia', 'Germany', 'France', 'UAE', 'Saudi Arabia', 'Pakistan'];
-            const plans = ['1 Month Plan', '3 Months Plan', '6 Months Plan', '12 Months Plan'];
+            const services = ['1 Month Service', '3 Months Service', '6 Months Service', '12 Months Service'];
             
             const notification = document.getElementById('sales-notification');
             const nameEl = notification.querySelector('.sales-name');
@@ -688,12 +688,12 @@
             function showNotification() {
                 const name = names[Math.floor(Math.random() * names.length)];
                 const country = countries[Math.floor(Math.random() * countries.length)];
-                const plan = plans[Math.floor(Math.random() * plans.length)];
+                const service = services[Math.floor(Math.random() * services.length)];
                 const time = Math.floor(Math.random() * 59) + 1 + ' mins ago';
 
                 nameEl.textContent = name;
                 countryEl.textContent = country;
-                planEl.textContent = plan;
+                planEl.textContent = service;
                 timeEl.textContent = time;
 
                 notification.classList.add('active');

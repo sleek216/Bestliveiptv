@@ -315,7 +315,7 @@
                     <i class="ph-fill ph-list-bullets"></i>
                 </div>
                 <h3 class="feature-title">TV Guide (EPG)</h3>
-                <p class="feature-desc">Never miss your favorite shows with our electronic program guide. Plan your viewing ahead.</p>
+                <p class="feature-desc">Never miss your favorite shows with our electronic program guide. Service your viewing ahead.</p>
                 <div class="feature-tags">
                     <span>Schedule</span>
                     <span>Reminders</span>
@@ -407,13 +407,13 @@
 <section class="pricing-section" id="pricing">
     <div class="container">
         <div class="section-header" data-aos="fade-up">
-            <h2 class="section-title">Choose Your <span class="text-gradient">Perfect Plan</span></h2>
+            <h2 class="section-title">Choose Your <span class="text-gradient">Perfect Service</span></h2>
             <p class="section-subtitle">
-                Flexible pricing options to suit every need. All plans include all features.
+                Flexible pricing options to suit every need. All services include all features.
             </p>
         </div>
         
-        <!-- Plan Duration Tabs -->
+        <!-- Service Duration Tabs -->
         <div class="pricing-tabs" data-aos="fade-up" data-aos-delay="100">
             <button class="tab-btn active" data-tab="1_month">1 Month</button>
             <button class="tab-btn" data-tab="3_months">3 Months</button>
@@ -519,7 +519,7 @@
                 
                 <div class="pricing-header">
                     <h3 class="plan-name">2 Devices</h3>
-                    <p class="plan-devices">Family Plan</p>
+                    <p class="plan-devices">Family Service</p>
                 </div>
                 
                 <div class="pricing-price">
@@ -549,7 +549,7 @@
             <div class="pricing-card" data-duration="1_month">
                 <div class="pricing-header">
                     <h3 class="plan-name">3 Devices</h3>
-                    <p class="plan-devices">Premium Plan</p>
+                    <p class="plan-devices">Premium Service</p>
                 </div>
                 
                 <div class="pricing-price">
@@ -581,7 +581,7 @@
         <div class="pricing-footer" data-aos="fade-up">
             <a href="{{ route('packages.index') }}" class="btn btn-glass btn-lg">
                 <i class="ph ph-squares-four"></i>
-                View All Plans
+                View All Services
             </a>
         </div>
     </div>
@@ -605,8 +605,8 @@
                 <div class="step-icon">
                     <i class="ph-fill ph-cursor-click"></i>
                 </div>
-                <h3 class="step-title">Choose Your Plan</h3>
-                <p class="step-desc">Select the subscription plan that best fits your needs. We offer flexible options for everyone.</p>
+                <h3 class="step-title">Choose Your Service</h3>
+                <p class="step-desc">Select the subscription service that best fits your needs. We offer flexible options for everyone.</p>
             </div>
             
             <div class="step-connector">
@@ -877,7 +877,7 @@
                 @endif
                 <a href="{{ route('packages.index') }}" class="btn btn-outline-white btn-lg">
                     <i class="ph ph-shopping-cart"></i>
-                    View Plans
+                    View Services
                 </a>
             </div>
         </div>

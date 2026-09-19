@@ -59,7 +59,7 @@
                             </div>
                             <div class="stat-text">
                                 <span class="stat-value">{{ $orders->where('is_active', true)->count() }}</span>
-                                <span class="stat-label">Active Plans</span>
+                                <span class="stat-label">Active Services</span>
                             </div>
                         </div>
                         <div class="header-stat-item">

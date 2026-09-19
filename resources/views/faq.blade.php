@@ -142,7 +142,7 @@
                                 <i class="ph ph-plus"></i>
                             </button>
                             <div class="faq-answer">
-                                <p>The number of simultaneous connections depends on your subscription plan. We offer plans ranging from 1 to 4+ devices. For example, a 2-device plan allows you to stream on two different devices at the same time, making it perfect for family use.</p>
+                                <p>The number of simultaneous connections depends on your subscription service. We offer services ranging from 1 to 4+ devices. For example, a 2-device service allows you to stream on two different devices at the same time, making it perfect for family use.</p>
                             </div>
                         </div>
                     </div>
@@ -238,11 +238,11 @@
                         
                         <div class="faq-item">
                             <button class="faq-question">
-                                <span>Can I upgrade my plan?</span>
+                                <span>Can I upgrade my service?</span>
                                 <i class="ph ph-plus"></i>
                             </button>
                             <div class="faq-answer">
-                                <p>Yes, you can upgrade your plan at any time. Contact our support team and we'll help you upgrade to a higher tier plan. The upgrade cost will be prorated based on your remaining subscription time.</p>
+                                <p>Yes, you can upgrade your service at any time. Contact our support team and we'll help you upgrade to a higher tier service. The upgrade cost will be prorated based on your remaining subscription time.</p>
                             </div>
                         </div>
                     </div>

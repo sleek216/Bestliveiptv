@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Pricing Plans - Best Live Services')
+@section('title', 'Pricing Services - Best Live Services')
 
 @section('content')
 <!-- Page Hero -->
@@ -15,11 +15,11 @@
         <div class="page-hero-content">
             <div class="page-hero-text" data-aos="fade-right">
                 <h1 class="page-hero-title">
-                    Choose Your <span class="text-gradient">Perfect Plan</span>
+                    Choose Your <span class="text-gradient">Perfect Service</span>
                 </h1>
                 
                 <p class="page-hero-subtitle">
-                    Flexible pricing options for everyone. All plans include access to 
+                    Flexible pricing options for everyone. All services include access to 
                     20,000+ channels, HD & 4K quality, and premium features.
                 </p>
                 
@@ -43,7 +43,7 @@
                 <div class="page-hero-image">
                     <div class="page-hero-image-wrapper">
                         <img src="https://images.unsplash.com/photo-1593784991095-a205069470b6?w=600&h=400&fit=crop" 
-                             alt="Services Pricing Plans" 
+                             alt="Services Pricing Services" 
                              class="page-hero-img"
                              loading="lazy">
                     </div>

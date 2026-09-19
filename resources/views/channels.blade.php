@@ -415,7 +415,7 @@
             <div class="cta-buttons">
                 <a href="{{ route('packages.index') }}" class="btn btn-primary btn-lg">
                     <i class="ph ph-shopping-cart"></i>
-                    View Pricing Plans
+                    View Pricing Services
                 </a>
                 <a href="{{ route('packages.index') }}?duration=trial" class="btn btn-white btn-lg">
                     <i class="ph ph-play-circle"></i>

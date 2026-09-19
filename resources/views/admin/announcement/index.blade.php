@@ -37,7 +37,7 @@
 
                         <div class="mb-3">
                             <label for="announcement_text" class="form-label">Announcement Text</label>
-                            <textarea class="form-control @error('announcement_text') is-invalid @enderror" id="announcement_text" name="announcement_text" rows="2" placeholder="Get <strong>50% OFF</strong> on annual plans">{{ old('announcement_text', $settings['announcement_text']) }}</textarea>
+                            <textarea class="form-control @error('announcement_text') is-invalid @enderror" id="announcement_text" name="announcement_text" rows="2" placeholder="Get <strong>50% OFF</strong> on annual services">{{ old('announcement_text', $settings['announcement_text']) }}</textarea>
                             <small class="text-muted">Supports HTML tags like &lt;strong&gt;, &lt;b&gt;, &lt;i&gt;, &lt;span&gt;</small>
                             @error('announcement_text')
                                 <div class="invalid-feedback">{{ $message }}</div>

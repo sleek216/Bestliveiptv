@@ -32,7 +32,7 @@ class OrderConfirmationMail extends Mailable implements ShouldQueue
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Your IPTV Subscription is Active! - Order #' . $this->order->order_number,
+            subject: 'Your Services Subscription is Active! - Order #' . $this->order->order_number,
         );
     }
 

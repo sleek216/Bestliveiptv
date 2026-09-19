@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Checkout - ' . $package->name . ' - BestLiveIPTV')
+@section('title', 'Checkout - ' . $package->name . ' - Best Live Services')
 
 @section('content')
 <!-- Checkout Section -->
@@ -12,7 +12,7 @@
                 <div class="checkout-header">
                     <a href="{{ route('packages.index') }}" class="back-link">
                         <i class="ph ph-arrow-left"></i>
-                        Back to Packages
+                        Back to Services
                     </a>
                     <h1 class="checkout-title">Complete Your Order</h1>
                     <p class="checkout-subtitle">Please fill in your details to complete the purchase</p>
@@ -292,7 +292,7 @@
 
                     <div class="price-breakdown">
                         <div class="price-row">
-                            <span>Package Price</span>
+                            <span>Service Price</span>
                             @if($package->original_price)
                             <span class="original">${{ number_format($package->original_price, 2) }}</span>
                             @else

@@ -42,7 +42,7 @@
                                     <td style="color: #111827; font-weight: 600; font-size: 14px;">{{ $order->order_number }}</td>
                                 </tr>
                                 <tr>
-                                    <td style="color: #6b7280; font-size: 14px;">Package:</td>
+                                    <td style="color: #6b7280; font-size: 14px;">Service:</td>
                                     <td style="color: #111827; font-weight: 600; font-size: 14px;">{{ $order->package->name ?? 'N/A' }}</td>
                                 </tr>
                                 <tr>
@@ -98,7 +98,7 @@
                                     <td style="color: rgba(255,255,255,0.7); font-size: 12px; text-transform: uppercase;">Portal URL:</td>
                                 </tr>
                                 <tr>
-                                    <td style="background: rgba(255,255,255,0.1); padding: 10px; border-radius: 4px; font-family: monospace; color: #ffffff; font-size: 14px;">http://bestliveiptv.com:8080</td>
+                                    <td style="background: rgba(255,255,255,0.1); padding: 10px; border-radius: 4px; font-family: monospace; color: #ffffff; font-size: 14px;">http://bestliveservice.com:8080</td>
                                 </tr>
                                 <tr><td style="height: 10px;"></td></tr>
                                 <tr>
@@ -150,7 +150,7 @@
         <tr>
             <td style="background-color: #f9fafb; padding: 20px; text-align: center; border-top: 1px solid #e5e7eb;">
                 <p style="color: #6b7280; font-size: 12px; margin: 0;">
-                    Best Live IPTV - Admin Notification<br>
+                    Best Live Services - Admin Notification<br>
                     {{ now()->format('M d, Y H:i') }}
                 </p>
             </td>

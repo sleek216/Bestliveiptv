@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Become a Reseller - BestLiveIPTV')
+@section('title', 'Become a Reseller - Best Live Services')
 
 @section('content')
 <!-- Page Hero Section -->
@@ -20,11 +20,11 @@
                 </div>
                 
                 <h1 class="page-hero-title">
-                    Become an IPTV <span class="text-gradient">Reseller</span>
+                    Become an Services <span class="text-gradient">Reseller</span>
                 </h1>
                 
                 <p class="page-hero-subtitle">
-                    Start your own IPTV business with our premium reseller panel. 
+                    Start your own Services business with our premium reseller panel. 
                     Get the best wholesale prices, high stability servers, and dedicated 24/7 support.
                 </p>
                 
@@ -46,7 +46,7 @@
                 <div class="hero-cta" style="margin-top: 2rem;">
                     <a href="#reseller-packages" class="btn btn-primary btn-lg">
                         <i class="ph ph-shopping-cart"></i>
-                        View Reseller Packages
+                        View Reseller Services
                     </a>
                     <a href="{{ route('contact') }}" class="btn btn-glass btn-lg">
                         <i class="ph ph-chat-circle-text"></i>
@@ -91,9 +91,9 @@
 <section class="reseller-benefits-section">
     <div class="container">
         <div class="section-header" data-aos="fade-up">
-            <h2 class="section-title">Why Become a <span class="text-gradient">BestLiveIPTV Reseller?</span></h2>
+            <h2 class="section-title">Why Become a <span class="text-gradient">Best Live Services Reseller?</span></h2>
             <p class="section-subtitle">
-                Join our successful reseller network and build a profitable IPTV business
+                Join our successful reseller network and build a profitable Services business
             </p>
         </div>
         
@@ -224,11 +224,11 @@
     </div>
 </section>
 
-<!-- Reseller Packages Section -->
+<!-- Reseller Services Section -->
 <section class="reseller-packages-section" id="reseller-packages">
     <div class="container">
         <div class="section-header" data-aos="fade-up">
-            <h2 class="section-title">Choose Your <span class="text-gradient">Reseller Package</span></h2>
+            <h2 class="section-title">Choose Your <span class="text-gradient">Reseller Service</span></h2>
             <p class="section-subtitle">
                 Start with any package and scale as your business grows. All credits never expire!
             </p>
@@ -247,7 +247,7 @@
                 
                 <div class="pricing-header">
                     <h3 class="plan-name">{{ $package->name }}</h3>
-                    <p class="plan-credits">Credits Package</p>
+                    <p class="plan-credits">Credits Service</p>
                 </div>
                 
                 <div class="pricing-price">
@@ -280,13 +280,13 @@
             @endforeach
         </div>
         @else
-        <!-- Empty State - No Packages Available -->
+        <!-- Empty State - No Services Available -->
         <div class="empty-packages-state" data-aos="fade-up">
             <div class="empty-state-card">
                 <div class="empty-state-icon">
                     <i class="ph-duotone ph-package"></i>
                 </div>
-                <h3 class="empty-state-title">No Reseller Packages Available</h3>
+                <h3 class="empty-state-title">No Reseller Services Available</h3>
                 <p class="empty-state-desc">
                     We're currently setting up our reseller packages. 
                     Please check back soon or contact us for custom reseller options.
@@ -386,8 +386,8 @@
     <div class="container">
         <div class="cta-card" data-aos="fade-up">
             <div class="cta-content">
-                <h2 class="cta-title">Ready to Start Your IPTV Business?</h2>
-                <p class="cta-desc">Join hundreds of successful resellers who are earning with BestLiveIPTV. Get started today!</p>
+                <h2 class="cta-title">Ready to Start Your Services Business?</h2>
+                <p class="cta-desc">Join hundreds of successful resellers who are earning with Best Live Services. Get started today!</p>
                 <div class="cta-buttons">
                     <a href="#reseller-packages" class="btn btn-white btn-lg">
                         <i class="ph ph-rocket-launch"></i>
@@ -543,7 +543,7 @@
     background: var(--white);
 }
 
-/* Reseller Packages Section */
+/* Reseller Services Section */
 .reseller-packages-section {
     padding: 5rem 0 6rem;
     background: linear-gradient(180deg, var(--gray-50) 0%, var(--white) 100%);

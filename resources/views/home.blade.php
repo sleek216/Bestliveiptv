@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'BestLiveIPTV - #1 Premium IPTV Service | 20,000+ Channels')
+@section('title', 'Best Live Services - #1 Premium Services Service | 20,000+ Channels')
 
 @section('content')
 <!-- Hero Section -->
@@ -682,7 +682,7 @@
                     <i class="ph-fill ph-star"></i>
                     <i class="ph-fill ph-star"></i>
                 </div>
-                <p class="testimonial-content">"Best IPTV service I've ever used! The picture quality is amazing and I've never experienced any buffering. Highly recommended!"</p>
+                <p class="testimonial-content">"Best Services service I've ever used! The picture quality is amazing and I've never experienced any buffering. Highly recommended!"</p>
                 <div class="testimonial-author">
                     <div class="author-avatar">
                         <i class="ph-fill ph-user"></i>
@@ -722,7 +722,7 @@
                     <i class="ph-fill ph-star"></i>
                     <i class="ph-fill ph-star"></i>
                 </div>
-                <p class="testimonial-content">"I switched from cable TV to BestLiveIPTV and I'm saving so much money! The VOD library is huge and my whole family loves it."</p>
+                <p class="testimonial-content">"I switched from cable TV to Best Live Services and I'm saving so much money! The VOD library is huge and my whole family loves it."</p>
                 <div class="testimonial-author">
                     <div class="author-avatar">
                         <i class="ph-fill ph-user"></i>
@@ -762,11 +762,11 @@
             @empty
             <div class="faq-item">
                 <button class="faq-question">
-                    <span>What is IPTV and how does it work?</span>
+                    <span>What is Services and how does it work?</span>
                     <i class="ph ph-plus"></i>
                 </button>
                 <div class="faq-answer">
-                    <p>IPTV (Internet Protocol Television) is a service that delivers television content over the internet. Instead of receiving TV programs through traditional satellite or cable, you stream content directly through your internet connection to any compatible device.</p>
+                    <p>Services (Internet Protocol Television) is a service that delivers television content over the internet. Instead of receiving TV programs through traditional satellite or cable, you stream content directly through your internet connection to any compatible device.</p>
                 </div>
             </div>
             
@@ -776,7 +776,7 @@
                     <i class="ph ph-plus"></i>
                 </button>
                 <div class="faq-answer">
-                    <p>Our service works on Smart TVs, Android devices, iOS (iPhone/iPad), Amazon Fire Stick, MAG boxes, Windows PC, Mac, and most IPTV players. We provide detailed setup guides for all devices.</p>
+                    <p>Our service works on Smart TVs, Android devices, iOS (iPhone/iPad), Amazon Fire Stick, MAG boxes, Windows PC, Mac, and most Services players. We provide detailed setup guides for all devices.</p>
                 </div>
             </div>
             
@@ -842,7 +842,7 @@
     <div class="container">
         <div class="cta-content" data-aos="zoom-in">
             <h2 class="cta-title">Ready to Start <span class="text-gradient">Streaming?</span></h2>
-            <p class="cta-subtitle">Join thousands of satisfied customers and experience the best IPTV service today!</p>
+            <p class="cta-subtitle">Join thousands of satisfied customers and experience the best Services service today!</p>
             
             <div class="cta-features">
                 <div class="cta-feature">

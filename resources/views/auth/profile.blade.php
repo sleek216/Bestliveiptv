@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'My Profile - BestLiveIPTV')
+@section('title', 'My Profile - Best Live Services')
 
 @section('content')
 <div class="profile-page-wrapper">
@@ -112,7 +112,7 @@
                     
                     <a href="{{ route('packages.index') }}" class="sidebar-link link-primary">
                         <i class="ph-fill ph-plus-circle"></i>
-                        <span>Buy New Package</span>
+                        <span>Buy New Service</span>
                     </a>
                     
                     <form action="{{ route('logout') }}" method="POST" class="logout-form">
@@ -165,7 +165,7 @@
                                     <i class="ph-fill ph-television-simple"></i>
                                 </div>
                                 <div class="order-details">
-                                    <h3>{{ $order->package->name ?? 'Premium Package' }}</h3>
+                                    <h3>{{ $order->package->name ?? 'Premium Service' }}</h3>
                                     <span class="order-id">#{{ $order->order_number }}</span>
                                 </div>
                             </div>
@@ -209,7 +209,7 @@
                             <h3>No active subscriptions</h3>
                             <p>You haven't purchased any packages yet. Start streaming today!</p>
                             <a href="{{ route('packages.index') }}" class="btn-primary-glow">
-                                Browse Packages <i class="ph-bold ph-arrow-right"></i>
+                                Browse Services <i class="ph-bold ph-arrow-right"></i>
                             </a>
                         </div>
                         @endforelse

@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Payment Pending - BestLiveIPTV')
+@section('title', 'Payment Pending - Best Live Services')
 
 @section('content')
 <section class="checkout-result">
@@ -19,7 +19,7 @@
                     <span class="value">{{ $order->order_number }}</span>
                 </div>
                 <div class="detail-row">
-                    <span class="label">Package:</span>
+                    <span class="label">Service:</span>
                     <span class="value">{{ $order->package->name }}</span>
                 </div>
                 <div class="detail-row">
@@ -36,7 +36,7 @@
             <div class="payment-instructions">
                 <h3><i class="ph-fill ph-paypal-logo"></i> PayPal Payment</h3>
                 <p>Please send <strong>${{ number_format($order->amount, 2) }}</strong> to our PayPal account and include your order number <strong>{{ $order->order_number }}</strong> in the payment notes.</p>
-                <a href="https://paypal.me/bestliveiptv" target="_blank" class="btn btn--primary btn--lg">
+                <a href="https://paypal.me/Best Live Services" target="_blank" class="btn btn--primary btn--lg">
                     <i class="ph ph-arrow-square-out"></i>
                     Pay with PayPal
                 </a>

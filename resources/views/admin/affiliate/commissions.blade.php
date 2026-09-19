@@ -18,7 +18,7 @@
                     <tr>
                         <th class="ps-4 py-3 text-uppercase text-muted small fw-bold">Date</th>
                         <th class="py-3 text-uppercase text-muted small fw-bold">Affiliate / Code</th>
-                        <th class="py-3 text-uppercase text-muted small fw-bold">Buyer & Package</th>
+                        <th class="py-3 text-uppercase text-muted small fw-bold">Buyer & Service</th>
                         <th class="py-3 text-uppercase text-muted small fw-bold">Order</th>
                         <th class="py-3 text-uppercase text-muted small fw-bold">Commission</th>
                         <th class="py-3 text-uppercase text-muted small fw-bold">Status</th>
@@ -40,7 +40,7 @@
                         <td>
                             <div class="fw-bold text-dark">{{ $commission->referral->referredUser->name ?? $commission->order->customer_name ?? 'Unknown' }}</div>
                             <div class="small text-muted">{{ $commission->referral->referredUser->email ?? $commission->order->customer_email ?? '' }}</div>
-                            <div class="small text-primary mt-1">{{ $commission->order->package->name ?? 'Package' }}</div>
+                            <div class="small text-primary mt-1">{{ $commission->order->package->name ?? 'Service' }}</div>
                         </td>
                         <td>
                             <span class="badge bg-light text-dark border font-monospace">#{{ $commission->order->order_number ?? $commission->order_id }}</span>

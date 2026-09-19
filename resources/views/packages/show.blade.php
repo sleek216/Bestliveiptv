@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
-@section('title', $package->name . ' - ' . $package->duration_label . ' - BestLiveIPTV')
+@section('title', $package->name . ' - ' . $package->duration_label . ' - Best Live Services')
 
 @section('content')
-<!-- Package Detail Hero -->
+<!-- Service Detail Hero -->
 <section class="package-hero">
     <div class="hero-bg">
         <div class="hero-gradient"></div>
@@ -41,7 +41,7 @@
     </div>
 </section>
 
-<!-- Package Details -->
+<!-- Service Details -->
 <section class="package-details-section">
     <div class="container">
         <div class="package-grid">
@@ -198,7 +198,7 @@
     </div>
 </section>
 
-<!-- Related Packages -->
+<!-- Related Services -->
 <section class="related-section">
     <div class="container">
         <h2 class="section-title" data-aos="fade-up">Other Plans You Might Like</h2>

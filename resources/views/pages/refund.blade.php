@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Refund Policy - BestLiveIPTV')
+@section('title', 'Refund Policy - Best Live Services')
 
 @section('content')
 <!-- Page Hero -->

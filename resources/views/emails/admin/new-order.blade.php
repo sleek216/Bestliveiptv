@@ -18,7 +18,7 @@
         <tr>
             <td style="padding: 30px;">
                 <p style="color: #374151; font-size: 16px; line-height: 1.6; margin: 0 0 20px;">
-                    A new order has been placed on Best Live IPTV.
+                    A new order has been placed on Best Live Services.
                 </p>
                 
                 <!-- Order Details -->
@@ -33,7 +33,7 @@
                                     <td style="color: #111827; font-weight: 600; font-size: 14px;">{{ $order->order_number }}</td>
                                 </tr>
                                 <tr>
-                                    <td style="color: #6b7280; font-size: 14px;">Package:</td>
+                                    <td style="color: #6b7280; font-size: 14px;">Service:</td>
                                     <td style="color: #111827; font-weight: 600; font-size: 14px;">{{ $order->package->name ?? 'N/A' }}</td>
                                 </tr>
                                 <tr>
@@ -99,7 +99,7 @@
         <tr>
             <td style="background-color: #f9fafb; padding: 20px; text-align: center; border-top: 1px solid #e5e7eb;">
                 <p style="color: #6b7280; font-size: 12px; margin: 0;">
-                    Best Live IPTV - Admin Notification<br>
+                    Best Live Services - Admin Notification<br>
                     {{ now()->format('M d, Y H:i') }}
                 </p>
             </td>

@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Blog - BestLiveIPTV IPTV News & Updates')
+@section('title', 'Blog - Best Live Services Services News & Updates')
 
 @section('content')
 <!-- Page Hero Section -->
@@ -20,12 +20,12 @@
                 </div>
                 
                 <h1 class="page-hero-title">
-                    Latest IPTV <span class="text-gradient">News & Tutorials</span>
+                    Latest Services <span class="text-gradient">News & Tutorials</span>
                 </h1>
                 
                 <p class="page-hero-subtitle" style="max-width: 650px; margin: 0 auto 2rem;">
-                    Stay updated with the latest IPTV industry news, setup tutorials, tips & tricks, 
-                    and exclusive updates from BestLiveIPTV.
+                    Stay updated with the latest Services industry news, setup tutorials, tips & tricks, 
+                    and exclusive updates from Best Live Services.
                 </p>
                 
                 <div class="page-hero-features" style="justify-content: center;">
@@ -185,7 +185,7 @@
                 <i class="ph-fill ph-envelope-simple"></i>
             </div>
             <h2 class="newsletter-title">Stay Updated</h2>
-            <p class="newsletter-desc">Subscribe to our newsletter for the latest IPTV news, tutorials, and exclusive offers.</p>
+            <p class="newsletter-desc">Subscribe to our newsletter for the latest Services news, tutorials, and exclusive offers.</p>
             <form class="newsletter-form">
                 <div class="newsletter-input-wrapper">
                     <input type="email" placeholder="Enter your email address" class="newsletter-input" required>

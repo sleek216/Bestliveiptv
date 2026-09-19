@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'How It Works - BestLiveIPTV')
+@section('title', 'How It Works - Best Live Services')
 
 @section('content')
 <!-- Page Hero -->
@@ -17,7 +17,7 @@
             </span>
             <h1 class="page-title">How It <span class="text-gradient">Works</span></h1>
             <p class="page-subtitle">
-                Get started with BestLiveIPTV in just a few simple steps
+                Get started with Best Live Services in just a few simple steps
             </p>
         </div>
     </div>
@@ -74,7 +74,7 @@
                 <div class="step-content">
                     <div class="step-number">03</div>
                     <h3>Receive Your Credentials</h3>
-                    <p>After payment, you'll instantly receive your IPTV credentials via email. This includes your username, password, and portal URL needed to access the service.</p>
+                    <p>After payment, you'll instantly receive your Services credentials via email. This includes your username, password, and portal URL needed to access the service.</p>
                     <ul class="step-features">
                         <li><i class="ph-fill ph-check"></i> Instant email delivery</li>
                         <li><i class="ph-fill ph-check"></i> Portal URL & login details</li>
@@ -92,10 +92,10 @@
             <div class="step-item reverse" data-aos="fade-up">
                 <div class="step-content">
                     <div class="step-number">04</div>
-                    <h3>Install an IPTV App</h3>
-                    <p>Download and install an IPTV player app on your device. We support popular apps like IPTV Smarters, TiviMate, VLC, and many more across all platforms.</p>
+                    <h3>Install an Services App</h3>
+                    <p>Download and install an Services player app on your device. We support popular apps like Services Smarters, TiviMate, VLC, and many more across all platforms.</p>
                     <ul class="step-features">
-                        <li><i class="ph-fill ph-check"></i> Free IPTV apps available</li>
+                        <li><i class="ph-fill ph-check"></i> Free Services apps available</li>
                         <li><i class="ph-fill ph-check"></i> Works on all devices</li>
                         <li><i class="ph-fill ph-check"></i> Easy installation guides</li>
                     </ul>
@@ -112,7 +112,7 @@
                 <div class="step-content">
                     <div class="step-number">05</div>
                     <h3>Start Watching!</h3>
-                    <p>Enter your credentials in the IPTV app, and you're ready to enjoy 20,000+ live channels and 50,000+ VOD content in crystal clear HD & 4K quality.</p>
+                    <p>Enter your credentials in the Services app, and you're ready to enjoy 20,000+ live channels and 50,000+ VOD content in crystal clear HD & 4K quality.</p>
                     <ul class="step-features">
                         <li><i class="ph-fill ph-check"></i> 20,000+ live channels</li>
                         <li><i class="ph-fill ph-check"></i> 50,000+ movies & series</li>

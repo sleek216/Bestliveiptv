@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Affiliate Dashboard - BestLiveIPTV')
+@section('title', 'Affiliate Dashboard - Best Live Services')
 
 @section('content')
 <div style="min-height: 100vh; background: linear-gradient(135deg, #0a0f1a 0%, #1a2332 100%); padding: 80px 20px 40px;">

@@ -109,14 +109,14 @@ header('Content-Type: text/html; charset=utf-8');
         <strong>6. MySQL Database Connection Test:</strong>
         <?php
         $dbHost = '127.0.0.1';
-        $dbUser = 'bestliveiptv_db';
-        $dbPass = 'tm1}gUb~EgkR2!Xx';
-        $dbName = 'bestliveiptv_db';
+        $dbUser = 'YOUR_DB_USER';
+        $dbPass = 'YOUR_DB_PASSWORD';
+        $dbName = 'YOUR_DB_NAME';
 
         try {
             $pdo = new PDO("mysql:host=$dbHost;dbname=$dbName;charset=utf8mb4", $dbUser, $dbPass, [
                 PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-                PDO::ATTR_TIMEOUT => 5
+                PDO::ATTR_TIMEOUT => 2
             ]);
             echo '<span class="status-ok">✔ Connected to MySQL successfully!</span>';
             

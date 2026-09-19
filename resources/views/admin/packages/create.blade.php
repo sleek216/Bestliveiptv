@@ -1,15 +1,15 @@
 @extends('admin.layouts.app')
 
-@section('title', 'Create Package')
+@section('title', 'Create Service')
 
 @section('breadcrumb')
-    <li class="breadcrumb-item"><a href="{{ route('admin.packages.index') }}">Packages</a></li>
+    <li class="breadcrumb-item"><a href="{{ route('admin.packages.index') }}">Services</a></li>
     <li class="breadcrumb-item active">Create</li>
 @endsection
 
 @section('content')
     <div class="mb-4">
-        <h1 class="page-title">Create Package</h1>
+        <h1 class="page-title">Create Service</h1>
         <p class="text-muted mb-0">Add a new subscription package</p>
     </div>
 
@@ -19,10 +19,10 @@
         <div class="row">
             <div class="col-lg-8">
                 <div class="card mb-4">
-                    <div class="card-header">Package Details</div>
+                    <div class="card-header">Service Details</div>
                     <div class="card-body">
                         <div class="mb-3">
-                            <label for="name" class="form-label">Package Name *</label>
+                            <label for="name" class="form-label">Service Name *</label>
                             <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name" value="{{ old('name') }}" required>
                             @error('name')
                                 <div class="invalid-feedback">{{ $message }}</div>
@@ -126,15 +126,15 @@
                         </div>
                         <div class="form-check form-switch mb-3">
                             <input class="form-check-input" type="checkbox" id="is_featured" name="is_featured" value="1" {{ old('is_featured') ? 'checked' : '' }}>
-                            <label class="form-check-label" for="is_featured">Featured Package</label>
+                            <label class="form-check-label" for="is_featured">Featured Service</label>
                         </div>
                         <div class="form-check form-switch mb-3">
                             <input class="form-check-input" type="checkbox" id="is_trial" name="is_trial" value="1" {{ old('is_trial') ? 'checked' : '' }}>
-                            <label class="form-check-label" for="is_trial">Trial Package</label>
+                            <label class="form-check-label" for="is_trial">Trial Service</label>
                         </div>
                         <div class="form-check form-switch">
                             <input class="form-check-input" type="checkbox" id="is_reseller" name="is_reseller" value="1" {{ old('is_reseller') ? 'checked' : '' }}>
-                            <label class="form-check-label" for="is_reseller">Reseller Package</label>
+                            <label class="form-check-label" for="is_reseller">Reseller Service</label>
                             <small class="d-block text-muted mt-1">Show on reseller page instead of pricing page</small>
                         </div>
                     </div>
@@ -143,7 +143,7 @@
                 <div class="card">
                     <div class="card-body">
                         <button type="submit" class="btn btn-primary w-100">
-                            <i class="bi bi-check-lg me-2"></i>Create Package
+                            <i class="bi bi-check-lg me-2"></i>Create Service
                         </button>
                         <a href="{{ route('admin.packages.index') }}" class="btn btn-outline-secondary w-100 mt-2">Cancel</a>
                     </div>

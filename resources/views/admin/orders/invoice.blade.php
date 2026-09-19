@@ -156,9 +156,9 @@
     <div class="invoice-container">
         <div class="header">
             <div>
-                <div class="brand">BestLiveIPTV</div>
-                <div>Premium IPTV Services</div>
-                <div>support@bestliveiptv.com</div>
+                <div class="brand">Best Live Services</div>
+                <div>Premium Services Services</div>
+                <div>support@bestliveservice.com</div>
             </div>
             <div>
                 <div class="invoice-title">INVOICE</div>
@@ -204,7 +204,7 @@
                 <tbody>
                     <tr>
                         <td>
-                            <div><strong>{{ $order->package->name ?? 'Custom Package' }}</strong></div>
+                            <div><strong>{{ $order->package->name ?? 'Custom Service' }}</strong></div>
                             @if($order->package)
                             <div style="font-size: 0.8125rem; color: #6b7280; margin-top: 0.25rem;">
                                 {{ $order->package->duration_label ?? $order->package->duration }} Subscription
@@ -250,7 +250,7 @@
         </div>
 
         <div class="footer">
-            <p>Thank you for choosing BestLiveIPTV!</p>
+            <p>Thank you for choosing Best Live Services!</p>
             <p style="margin-top: 0.5rem; font-size: 0.75rem;">
                 If you have any questions about this invoice, please contact our support team.
             </p>

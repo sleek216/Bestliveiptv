@@ -13,7 +13,7 @@
         <p style="font-size: 1.6rem; font-weight: 700; color: #fff; margin: 0;">{{ number_format($stats['total_referrals'] ?? 0) }}</p>
     </div>
     <div class="order-card-glass" style="display: block; padding: 18px;">
-        <div style="font-size: 0.75rem; color: var(--text-secondary); text-transform: uppercase; margin-bottom: 8px;">Package Buyers</div>
+        <div style="font-size: 0.75rem; color: var(--text-secondary); text-transform: uppercase; margin-bottom: 8px;">Service Buyers</div>
         <p style="font-size: 1.6rem; font-weight: 700; color: #8b5cf6; margin: 0;">{{ number_format($stats['total_buyers'] ?? 0) }}</p>
     </div>
     <div class="order-card-glass" style="display: block; padding: 18px;">
@@ -57,7 +57,7 @@
                 <tr style="border-bottom: 1px solid rgba(255,255,255,0.1); color: rgba(255,255,255,0.6);">
                     <th style="padding: 10px; text-align: left;">Date</th>
                     <th style="padding: 10px; text-align: left;">Buyer</th>
-                    <th style="padding: 10px; text-align: left;">Package</th>
+                    <th style="padding: 10px; text-align: left;">Service</th>
                     <th style="padding: 10px; text-align: left;">Order</th>
                     <th style="padding: 10px; text-align: left;">Commission</th>
                     <th style="padding: 10px; text-align: left;">Status</th>

@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Pricing Plans - BestLiveIPTV')
+@section('title', 'Pricing Plans - Best Live Services')
 
 @section('content')
 <!-- Page Hero -->
@@ -43,7 +43,7 @@
                 <div class="page-hero-image">
                     <div class="page-hero-image-wrapper">
                         <img src="https://images.unsplash.com/photo-1593784991095-a205069470b6?w=600&h=400&fit=crop" 
-                             alt="IPTV Pricing Plans" 
+                             alt="Services Pricing Plans" 
                              class="page-hero-img"
                              loading="lazy">
                     </div>
@@ -80,7 +80,7 @@
         <div class="pricing-tabs" data-aos="fade-up">
             <button class="tab-btn active" data-tab="all">
                 <i class="ph ph-squares-four"></i>
-                All Packages
+                All Services
             </button>
             <button class="tab-btn" data-tab="1_month">1 Month</button>
             <button class="tab-btn" data-tab="3_months">3 Months</button>
@@ -101,7 +101,7 @@
     </div>
 </section>
 
-<!-- Packages Grid -->
+<!-- Services Grid -->
 <section class="packages-section">
     <div class="container">
         @if($packagesByDuration['all']->count() > 0)

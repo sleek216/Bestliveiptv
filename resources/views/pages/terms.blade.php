@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Terms of Service - BestLiveIPTV')
+@section('title', 'Terms of Service - Best Live Services')
 
 @section('content')
 <!-- Page Hero -->
@@ -34,13 +34,13 @@
             <div class="legal-main">
                 <section id="acceptance">
                     <h2>1. Acceptance of Terms</h2>
-                    <p>By accessing or using BestLiveIPTV services, you agree to be bound by these Terms of Service and all applicable laws and regulations. If you do not agree with any of these terms, you are prohibited from using or accessing our services.</p>
+                    <p>By accessing or using Best Live Services services, you agree to be bound by these Terms of Service and all applicable laws and regulations. If you do not agree with any of these terms, you are prohibited from using or accessing our services.</p>
                     <p>These terms apply to all users of the service, including without limitation users who are browsers, customers, and contributors of content.</p>
                 </section>
                 
                 <section id="services">
                     <h2>2. Description of Services</h2>
-                    <p>BestLiveIPTV provides Internet Protocol Television (IPTV) streaming services that allow users to access live television channels, video-on-demand content, and related entertainment services through an internet connection.</p>
+                    <p>Best Live Services provides Internet Protocol Television (Services) streaming services that allow users to access live television channels, video-on-demand content, and related entertainment services through an internet connection.</p>
                     <p>Our services include:</p>
                     <ul>
                         <li>Access to live TV channels from around the world</li>
@@ -108,7 +108,7 @@
                 
                 <section id="liability">
                     <h2>8. Limitation of Liability</h2>
-                    <p>In no event shall BestLiveIPTV, its directors, employees, or affiliates be liable for any indirect, incidental, special, consequential, or punitive damages resulting from your use or inability to use our services.</p>
+                    <p>In no event shall Best Live Services, its directors, employees, or affiliates be liable for any indirect, incidental, special, consequential, or punitive damages resulting from your use or inability to use our services.</p>
                     <p>Our total liability shall not exceed the amount you paid for the service in the 12 months preceding the claim.</p>
                 </section>
                 
@@ -121,7 +121,7 @@
                     <h2>10. Contact Information</h2>
                     <p>If you have any questions about these Terms of Service, please contact us:</p>
                     <ul>
-                        <li>Email: support@bestliveiptv.com</li>
+                        <li>Email: support@bestliveservice.com</li>
                         <li>Contact Form: <a href="{{ route('contact') }}">Contact Page</a></li>
                     </ul>
                 </section>

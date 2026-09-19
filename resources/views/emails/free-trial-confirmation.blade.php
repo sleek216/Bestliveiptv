@@ -137,7 +137,7 @@
         <!-- Header -->
         <div class="header">
             <h1>🎉 Free Trial Request Received!</h1>
-            <p>Thank you for trying BestLiveIPTV</p>
+            <p>Thank you for trying Best Live Services</p>
         </div>
 
         <!-- Content -->
@@ -146,7 +146,7 @@
                 Hi <strong>{{ $order->customer_name }}</strong>,
             </p>
             <p style="font-size: 16px; color: #374151; line-height: 1.6; margin: 0 0 30px;">
-                Thank you for choosing BestLiveIPTV! We have received your free trial request and our team is processing it.
+                Thank you for choosing Best Live Services! We have received your free trial request and our team is processing it.
             </p>
 
             <!-- Order Information -->
@@ -157,7 +157,7 @@
                     <strong>{{ $order->order_number }}</strong>
                 </div>
                 <div class="order-row">
-                    <span>Package:</span>
+                    <span>Service:</span>
                     <strong>{{ $order->package->name }}</strong>
                 </div>
                 <div class="order-row">
@@ -175,7 +175,7 @@
                 <h2>⏳ What Happens Next?</h2>
                 <p>
                     Our team will review your free trial request and set up your account. 
-                    <strong>You will receive your IPTV credentials shortly via a separate email from our team.</strong>
+                    <strong>You will receive your Services credentials shortly via a separate email from our team.</strong>
                 </p>
             </div>
 
@@ -183,9 +183,9 @@
             <div class="steps-box">
                 <h2>📱 Get Ready!</h2>
                 <ol>
-                    <li>Download an IPTV app on your device (IPTV Smarters Pro, TiviMate, or Perfect Player recommended)</li>
+                    <li>Download an Services app on your device (Services Smarters Pro, TiviMate, or Perfect Player recommended)</li>
                     <li>Wait for your credentials email from our support team</li>
-                    <li>Enter the provided credentials in your IPTV app</li>
+                    <li>Enter the provided credentials in your Services app</li>
                     <li>Enjoy thousands of live channels and VOD content!</li>
                 </ol>
             </div>
@@ -204,15 +204,15 @@
 
         <!-- Footer -->
         <div class="footer">
-            <p><strong>BestLiveIPTV</strong></p>
-            <p>Premium IPTV Service</p>
+            <p><strong>Best Live Services</strong></p>
+            <p>Premium Services Service</p>
             <p style="margin-top: 15px;">
                 <a href="{{ route('home') }}">Visit Website</a> | 
                 <a href="{{ route('contact') }}">Contact Support</a> | 
                 <a href="{{ route('faq') }}">FAQ</a>
             </p>
             <p style="margin-top: 15px; font-size: 12px;">
-                © {{ date('Y') }} BestLiveIPTV. All rights reserved.
+                © {{ date('Y') }} Best Live Services. All rights reserved.
             </p>
         </div>
     </div>

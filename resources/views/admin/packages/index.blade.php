@@ -1,19 +1,19 @@
 @extends('admin.layouts.app')
 
-@section('title', 'Packages')
+@section('title', 'Services')
 
 @section('breadcrumb')
-    <li class="breadcrumb-item active">Packages</li>
+    <li class="breadcrumb-item active">Services</li>
 @endsection
 
 @section('content')
     <div class="d-flex justify-content-between align-items-center mb-4">
         <div>
-            <h1 class="page-title">Packages</h1>
+            <h1 class="page-title">Services</h1>
             <p class="text-muted mb-0">Manage your subscription packages</p>
         </div>
         <a href="{{ route('admin.packages.create') }}" class="btn btn-primary">
-            <i class="bi bi-plus-lg me-2"></i>Add Package
+            <i class="bi bi-plus-lg me-2"></i>Add Service
         </a>
     </div>
 
@@ -23,7 +23,7 @@
                 <table class="table table-hover">
                     <thead>
                         <tr>
-                            <th>Package</th>
+                            <th>Service</th>
                             <th>Price</th>
                             <th>Duration</th>
                             <th>Connections</th>

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>@yield('title', 'Admin Dashboard') - Best Live IPTV</title>
+    <title>@yield('title', 'Admin Dashboard') - Best Live Services</title>
     <link rel="icon" type="image/svg+xml" href="{{ asset('images/favicon.svg') }}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
@@ -286,7 +286,7 @@
         <div class="sidebar-header">
             <a href="{{ route('admin.dashboard') }}" class="sidebar-brand">
                 <i class="bi bi-tv"></i>
-                <span>Best Live IPTV</span>
+                <span>Best Live Services</span>
             </a>
         </div>
         
@@ -301,7 +301,7 @@
             @if(auth()->user()->hasAdminPermission('packages'))
             <a href="{{ route('admin.packages.index') }}" class="nav-link {{ request()->routeIs('admin.packages.*') ? 'active' : '' }}">
                 <i class="bi bi-box-seam"></i>
-                <span>Packages</span>
+                <span>Services</span>
             </a>
             @endif
             @if(auth()->user()->hasAdminPermission('orders'))

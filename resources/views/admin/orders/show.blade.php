@@ -53,7 +53,7 @@
                             <div>{{ ucfirst($order->payment_method) }}</div>
                         </div>
                         <div class="col-md-6 mb-3">
-                            <label class="text-muted small">Package</label>
+                            <label class="text-muted small">Service</label>
                             <div class="fw-medium">{{ $order->package->name ?? 'N/A' }}</div>
                         </div>
                         <div class="col-md-6 mb-3">
@@ -151,7 +151,7 @@
                         @csrf
                         <div class="mb-3">
                             <label class="form-label">Subject *</label>
-                            <input type="text" name="subject" class="form-control" value="Your IPTV Subscription Details - {{ $order->order_number }}" required>
+                            <input type="text" name="subject" class="form-control" value="Your Services Subscription Details - {{ $order->order_number }}" required>
                         </div>
                         <div class="mb-3">
                             <label class="form-label">Message *</label>
@@ -159,7 +159,7 @@
                         </div>
                         <div class="form-check mb-3">
                             <input class="form-check-input" type="checkbox" id="include_credentials" name="include_credentials" value="1">
-                            <label class="form-check-label" for="include_credentials">Include IPTV Credentials</label>
+                            <label class="form-check-label" for="include_credentials">Include Services Credentials</label>
                         </div>
                         <div id="credentials-fields" style="display: none;">
                             <div class="row">

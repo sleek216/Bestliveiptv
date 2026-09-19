@@ -104,7 +104,7 @@
                                 <th width="40"><input type="checkbox" id="select-all" class="form-check-input"></th>
                                 <th>Order #</th>
                                 <th>Customer</th>
-                                <th>Package</th>
+                                <th>Service</th>
                                 <th>Amount</th>
                                 <th>Payment</th>
                                 <th>Status</th>

@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
     <meta name="theme-color" content="#0066FF">
-    <meta name="description" content="Best Live IPTV - Premium IPTV Service with 20,000+ Channels, HD & 4K Quality, 99.9% Uptime. Get the best streaming experience worldwide.">
-    <meta name="keywords" content="IPTV, streaming, live TV, 4K IPTV, HD channels, premium IPTV">
-    <meta name="author" content="Best Live IPTV">
+    <meta name="description" content="Best Live Services - Premium Services Service with 20,000+ Channels, HD & 4K Quality, 99.9% Uptime. Get the best streaming experience worldwide.">
+    <meta name="keywords" content="Services, streaming, live TV, 4K Services, HD channels, premium Services">
+    <meta name="author" content="Best Live Services">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     
-    <title>@yield('title', 'Best Live IPTV - Premium Streaming Service')</title>
+    <title>@yield('title', 'Best Live Services - Premium Streaming Service')</title>
     
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="{{ asset('images/favicon.svg') }}">
@@ -134,7 +134,7 @@
                         </svg>
                     </span>
                     <span class="brand__text">
-                        <span class="brand__name">Best<em>Live</em>IPTV</span>
+                        <span class="brand__name">Best<em>Live</em>Services</span>
                         <span class="brand__tagline">Premium Streaming</span>
                     </span>
                 </a>
@@ -316,10 +316,10 @@
                                     <rect x="12" y="42" width="24" height="2" rx="1" fill="url(#footerLogoGradient)" opacity="0.6"/>
                                 </svg>
                             </div>
-                            <span class="logo-name">Best<span class="logo-highlight">Live</span>IPTV</span>
+                            <span class="logo-name">Best<span class="logo-highlight">Live</span>Services</span>
                         </a>
                         <p class="footer-desc">
-                            Experience the future of television with our premium IPTV service. 
+                            Experience the future of television with our premium Services service. 
                             20,000+ channels, HD & 4K quality, and 24/7 support.
                         </p>
                         <div class="footer-social">
@@ -363,7 +363,7 @@
                         <ul class="footer-contact">
                             <li>
                                 <i class="ph-fill ph-envelope"></i>
-                                <a href="mailto:info@bestliveiptv.com">info@bestliveiptv.com</a>
+                                <a href="mailto:info@bestliveservice.com">info@bestliveservice.com</a>
                             </li>
                             <li>
                                 <i class="ph-fill ph-whatsapp-logo"></i>
@@ -371,7 +371,7 @@
                             </li>
                             <li>
                                 <i class="ph-fill ph-telegram-logo"></i>
-                                <a href="#">@BestLiveIPTV</a>
+                                <a href="#">@BestLiveServices</a>
                             </li>
                             <li>
                                 <i class="ph-fill ph-clock"></i>
@@ -411,7 +411,7 @@
             <div class="container">
                 <div class="footer-bottom-content">
                     <p class="copyright">
-                        &copy; {{ date('Y') }} BestLiveIPTV. {{ __('All rights reserved') }}.
+                        &copy; {{ date('Y') }} Best Live Services. {{ __('All rights reserved') }}.
                     </p>
                     <ul class="footer-bottom-links">
                         <li><a href="{{ route('terms') }}">{{ __('Terms') }}</a></li>

@@ -90,7 +90,7 @@
         </div>
         
         <div class="content">
-            <p style="margin-top: 0;">You have received a new message from the contact form on BestLiveIPTV.</p>
+            <p style="margin-top: 0;">You have received a new message from the contact form on Best Live Services.</p>
             
             <div class="info-row">
                 <div class="label">From</div>
@@ -134,8 +134,8 @@
         </div>
         
         <div class="footer">
-            <p style="margin: 0;">This is an automated message from BestLiveIPTV Contact Form</p>
-            <p style="margin: 5px 0 0 0;">© {{ date('Y') }} BestLiveIPTV. All rights reserved.</p>
+            <p style="margin: 0;">This is an automated message from Best Live Services Contact Form</p>
+            <p style="margin: 5px 0 0 0;">© {{ date('Y') }} Best Live Services. All rights reserved.</p>
         </div>
     </div>
 </body>

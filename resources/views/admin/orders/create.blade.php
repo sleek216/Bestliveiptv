@@ -29,11 +29,11 @@
                         <small class="text-muted">Enter email or user name to search customer for making his order</small>
                     </div>
 
-                    <!-- Package Selection -->
+                    <!-- Service Selection -->
                     <div class="mb-3">
-                        <label class="form-label">Select Package</label>
+                        <label class="form-label">Select Service</label>
                         <select name="package_id" id="package_id" class="form-select" required>
-                            <option value="">-- Select Package --</option>
+                            <option value="">-- Select Service --</option>
                             @foreach($packages as $package)
                                 <option value="{{ $package->id }}" data-price="{{ $package->price }}">
                                     {{ $package->name }} - ${{ $package->price }}

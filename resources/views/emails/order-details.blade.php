@@ -10,7 +10,7 @@
         <!-- Header -->
         <tr>
             <td style="background: linear-gradient(135deg, #6366f1, #4f46e5); padding: 30px; text-align: center;">
-                <h1 style="color: #ffffff; margin: 0; font-size: 24px;">📺 Best Live IPTV</h1>
+                <h1 style="color: #ffffff; margin: 0; font-size: 24px;">📺 Best Live Services</h1>
             </td>
         </tr>
         
@@ -37,7 +37,7 @@
                                     <td style="color: #111827; font-weight: 600; font-size: 14px; border-bottom: 1px solid #e5e7eb;">{{ $order->order_number }}</td>
                                 </tr>
                                 <tr>
-                                    <td style="color: #6b7280; font-size: 14px; border-bottom: 1px solid #e5e7eb;">Package:</td>
+                                    <td style="color: #6b7280; font-size: 14px; border-bottom: 1px solid #e5e7eb;">Service:</td>
                                     <td style="color: #111827; font-weight: 600; font-size: 14px; border-bottom: 1px solid #e5e7eb;">{{ $order->package->name }}</td>
                                 </tr>
                                 <tr>
@@ -54,11 +54,11 @@
                 </table>
                 
                 @if($includeCredentials && ($username || $password || $m3uUrl || $portalUrl))
-                <!-- IPTV Credentials -->
+                <!-- Services Credentials -->
                 <table width="100%" cellpadding="0" cellspacing="0" style="background: linear-gradient(135deg, #10b981, #059669); border-radius: 8px; margin-bottom: 25px;">
                     <tr>
                         <td style="padding: 25px;">
-                            <h3 style="color: #ffffff; margin: 0 0 15px; font-size: 18px;">🔐 Your IPTV Credentials</h3>
+                            <h3 style="color: #ffffff; margin: 0 0 15px; font-size: 18px;">🔐 Your Services Credentials</h3>
                             
                             <table width="100%" cellpadding="8" cellspacing="0">
                                 @if($username)
@@ -110,8 +110,8 @@
                 </p>
                 
                 <p style="color: #374151; font-size: 16px; line-height: 1.6; margin: 0;">
-                    Thank you for choosing Best Live IPTV!<br>
-                    <strong>The Best Live IPTV Team</strong>
+                    Thank you for choosing Best Live Services!<br>
+                    <strong>The Best Live Services Team</strong>
                 </p>
             </td>
         </tr>
@@ -120,7 +120,7 @@
         <tr>
             <td style="background-color: #f9fafb; padding: 20px; text-align: center; border-top: 1px solid #e5e7eb;">
                 <p style="color: #6b7280; font-size: 12px; margin: 0;">
-                    © {{ date('Y') }} Best Live IPTV. All rights reserved.<br>
+                    © {{ date('Y') }} Best Live Services. All rights reserved.<br>
                     <a href="{{ route('terms') }}" style="color: #6366f1;">Terms of Service</a> | 
                     <a href="{{ route('privacy') }}" style="color: #6366f1;">Privacy Policy</a> |
                     <a href="{{ route('contact') }}" style="color: #6366f1;">Contact Support</a>

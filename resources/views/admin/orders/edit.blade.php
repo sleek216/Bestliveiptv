@@ -23,14 +23,14 @@
                     </div>
 
                     <div class="mb-3">
-                        <label class="form-label">Package</label>
+                        <label class="form-label">Service</label>
                         <input type="text" class="form-control" value="{{ $order->package->name ?? 'Custom Order' }}" readonly>
                     </div>
 
                     <!-- Adjustment -->
                     <div class="row">
                         <div class="col-md-6 mb-3">
-                            <label class="form-label">Base Price (Package)</label>
+                            <label class="form-label">Base Price (Service)</label>
                             <input type="text" class="form-control" value="{{ $order->package ? $order->package->price : $order->amount }}" readonly id="base_price">
                         </div>
                         <div class="col-md-6 mb-3">
@@ -43,7 +43,7 @@
                     <div class="mb-3">
                         <label class="form-label fw-bold">Current Total: <span id="total_price_display" class="text-success">${{ number_format($order->amount, 2) }}</span></label>
                         @if($order->package)
-                        <small class="d-block text-muted">Calculated as: Package (${{ $order->package->price }}) + Adjustment</small>
+                        <small class="d-block text-muted">Calculated as: Service (${{ $order->package->price }}) + Adjustment</small>
                         @endif
                     </div>
 

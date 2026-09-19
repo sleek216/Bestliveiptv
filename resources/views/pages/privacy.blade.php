@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Privacy Policy - BestLiveIPTV')
+@section('title', 'Privacy Policy - Best Live Services')
 
 @section('content')
 <!-- Page Hero -->
@@ -34,7 +34,7 @@
             <div class="legal-main">
                 <section id="introduction">
                     <h2>1. Introduction</h2>
-                    <p>BestLiveIPTV ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our IPTV streaming services.</p>
+                    <p>Best Live Services ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our Services streaming services.</p>
                     <p>By using our services, you consent to the data practices described in this policy. If you do not agree with the terms of this privacy policy, please do not access or use our services.</p>
                 </section>
                 
@@ -138,8 +138,8 @@
                     <h2>10. Contact Us</h2>
                     <p>If you have questions or concerns about this Privacy Policy or our data practices, please contact us:</p>
                     <ul>
-                        <li>Email: privacy@bestliveiptv.com</li>
-                        <li>Support: support@bestliveiptv.com</li>
+                        <li>Email: privacy@bestliveservice.com</li>
+                        <li>Support: support@bestliveservice.com</li>
                         <li>Contact Form: <a href="{{ route('contact') }}">Contact Page</a></li>
                     </ul>
                 </section>

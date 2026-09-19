@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your IPTV Subscription is Active!</title>
+    <title>Your Services Subscription is Active!</title>
     <style>
         body {
             margin: 0;
@@ -171,7 +171,7 @@
     <div class="email-container">
         <!-- Header -->
         <div class="header">
-            <h1>🎉 Welcome to BestLiveIPTV!</h1>
+            <h1>🎉 Welcome to Best Live Services!</h1>
             <p>Your subscription is now active</p>
         </div>
 
@@ -181,7 +181,7 @@
                 Hi <strong>{{ $order->customer_name }}</strong>,
             </p>
             <p style="font-size: 16px; color: #374151; line-height: 1.6; margin: 0 0 30px;">
-                Thank you for choosing BestLiveIPTV! Your payment has been successfully processed, and your IPTV subscription is now active. Below you'll find everything you need to get started.
+                Thank you for choosing Best Live Services! Your payment has been successfully processed, and your Services subscription is now active. Below you'll find everything you need to get started.
             </p>
 
             <!-- Order Information -->
@@ -192,7 +192,7 @@
                     <strong>{{ $order->order_number }}</strong>
                 </div>
                 <div class="order-row">
-                    <span>Package:</span>
+                    <span>Service:</span>
                     <strong>{{ $order->package->name }}</strong>
                 </div>
                 <div class="order-row">
@@ -211,11 +211,11 @@
 
             <!-- Credentials -->
             <div class="credentials-box">
-                <h2>🔑 Your IPTV Credentials</h2>
+                <h2>🔑 Your Services Credentials</h2>
                 
                 <div class="credential-item">
                     <div class="credential-label">Portal URL</div>
-                    <div class="credential-value">http://bestliveiptv.com:8080</div>
+                    <div class="credential-value">http://bestliveservice.com:8080</div>
                 </div>
 
                 <div class="credential-item">
@@ -241,8 +241,8 @@
                 <div class="step">
                     <div class="step-number">1</div>
                     <div class="step-content">
-                        <h3>Download an IPTV App</h3>
-                        <p>Install an IPTV player on your device. We recommend: IPTV Smarters Pro, TiviMate, or Perfect Player.</p>
+                        <h3>Download an Services App</h3>
+                        <p>Install an Services player on your device. We recommend: Services Smarters Pro, TiviMate, or Perfect Player.</p>
                     </div>
                 </div>
 
@@ -277,15 +277,15 @@
 
         <!-- Footer -->
         <div class="footer">
-            <p><strong>BestLiveIPTV</strong></p>
-            <p>Premium IPTV Service</p>
+            <p><strong>Best Live Services</strong></p>
+            <p>Premium Services Service</p>
             <p style="margin-top: 15px;">
                 <a href="{{ route('home') }}">Visit Website</a> | 
                 <a href="{{ route('contact') }}">Contact Support</a> | 
                 <a href="{{ route('faq') }}">FAQ</a>
             </p>
             <p style="margin-top: 15px; font-size: 12px;">
-                © {{ date('Y') }} BestLiveIPTV. All rights reserved.
+                © {{ date('Y') }} Best Live Services. All rights reserved.
             </p>
         </div>
     </div>

@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'About Us - BestLiveIPTV')
+@section('title', 'About Us - Best Live Services')
 
 @section('content')
 <!-- Page Hero -->
@@ -15,7 +15,7 @@
                 <i class="ph-fill ph-users"></i>
                 About Us
             </span>
-            <h1 class="page-title">Premium <span class="text-gradient">IPTV Service</span></h1>
+            <h1 class="page-title">Premium <span class="text-gradient">Services Service</span></h1>
             <p class="page-subtitle">
                 Delivering world-class entertainment to millions of happy customers worldwide
             </p>
@@ -32,10 +32,10 @@
                 <span class="badge">Our Story</span>
                 <h2>Who We Are</h2>
                 <p>
-                    BestLiveIPTV is a leading provider of premium IPTV services, dedicated to delivering 
+                    Best Live Services is a leading provider of premium Services services, dedicated to delivering 
                     the ultimate entertainment experience to customers around the world. Founded with a passion 
                     for innovation and customer satisfaction, we've grown to become one of the most trusted 
-                    names in the IPTV industry.
+                    names in the Services industry.
                 </p>
                 <p>
                     Our team of experts works tirelessly to ensure you have access to the best live TV channels, 
@@ -76,7 +76,7 @@
                 <span class="badge">Our Mission</span>
                 <h2>What Drives Us</h2>
                 <p>
-                    Our mission is to provide affordable, high-quality IPTV services that bring the world's 
+                    Our mission is to provide affordable, high-quality Services services that bring the world's 
                     best entertainment directly to your home. We're committed to:
                 </p>
                 <ul class="mission-list">

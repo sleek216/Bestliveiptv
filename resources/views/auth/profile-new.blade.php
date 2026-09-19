@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'My Profile - BestLiveIPTV')
+@section('title', 'My Profile - Best Live Services')
 
 @section('content')
 <!-- Profile Hero Section -->
@@ -144,7 +144,7 @@
                         <i class="ph-fill ph-crown-simple"></i>
                     </div>
                     <h3 class="widget-title">Admin Dashboard</h3>
-                    <p class="widget-desc">Manage your IPTV service, users, and content</p>
+                    <p class="widget-desc">Manage your Services service, users, and content</p>
                     <a href="{{ route('admin.dashboard') }}" class="widget-btn widget-btn--gold">
                         <i class="ph-fill ph-gear-six"></i>
                         <span>Open Dashboard</span>
@@ -161,7 +161,7 @@
                     <nav class="quick-nav">
                         <a href="{{ route('packages.index') }}" class="quick-nav-item">
                             <i class="ph-fill ph-package"></i>
-                            <span>Browse Packages</span>
+                            <span>Browse Services</span>
                         </a>
                         <a href="#personal-info" class="quick-nav-item">
                             <i class="ph-fill ph-user-circle-gear"></i>
@@ -465,7 +465,7 @@
                             <p class="empty-text">You haven't made any purchases yet. Explore our premium packages and start streaming today!</p>
                             <a href="{{ route('packages.index') }}" class="btn-pro btn-pro--primary btn-pro--lg">
                                 <i class="ph-fill ph-package"></i>
-                                <span>View Packages</span>
+                                <span>View Services</span>
                             </a>
                         </div>
                         @endforelse

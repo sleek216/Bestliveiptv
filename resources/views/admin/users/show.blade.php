@@ -152,7 +152,7 @@
                             <thead>
                                 <tr>
                                     <th>Order #</th>
-                                    <th>Package</th>
+                                    <th>Service</th>
                                     <th>Amount</th>
                                     <th>Status</th>
                                     <th>Date</th>

@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', $post->title . ' - BestLiveIPTV Blog')
+@section('title', $post->title . ' - Best Live Services Blog')
 
 @section('content')
 <!-- Page Hero Section -->
@@ -62,10 +62,10 @@
                 <div class="mt-5 p-4 rounded-4 bg-secondary bg-opacity-10 border border-secondary border-opacity-25 d-flex align-items-center justify-content-between flex-wrap gap-3" data-aos="fade-up">
                     <div class="d-flex align-items-center gap-3">
                         <div class="bg-primary rounded-circle d-flex align-items-center justify-content-center text-white fw-bold" style="width: 50px; height: 50px; font-size: 1.25rem;">
-                            IPTV
+                            Services
                         </div>
                         <div>
-                            <h6 class="mb-0 text-white fw-bold">Best Live IPTV Editorial Team</h6>
+                            <h6 class="mb-0 text-white fw-bold">Best Live Services Editorial Team</h6>
                             <small class="text-muted">Expert streaming guides & tutorials</small>
                         </div>
                     </div>

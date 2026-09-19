@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Contact Us - BestLiveIPTV')
+@section('title', 'Contact Us - Best Live Services')
 
 @section('content')
 <!-- Page Hero -->
@@ -20,7 +20,7 @@
                 
                 <p class="page-hero-subtitle">
                     Have questions? Our dedicated support team is available 24/7 
-                    to assist you with any inquiries about our IPTV service.
+                    to assist you with any inquiries about our Services service.
                 </p>
                 
                 <div class="page-hero-features">
@@ -89,8 +89,8 @@
                         </div>
                         <div class="card-content">
                             <h4>Email Us</h4>
-                            <a href="mailto:info@bestliveiptv.com">info@bestliveiptv.com</a>
-                            <a href="mailto:support@bestliveiptv.com">support@bestliveiptv.com</a>
+                            <a href="mailto:info@bestliveservice.com">info@bestliveservice.com</a>
+                            <a href="mailto:support@bestliveservice.com">support@bestliveservice.com</a>
                         </div>
                     </div>
                     
@@ -111,7 +111,7 @@
                         </div>
                         <div class="card-content">
                             <h4>Telegram</h4>
-                            <a href="#">@BestLiveIPTV</a>
+                            <a href="#">@BestLiveServices</a>
                             <span class="availability">Instant Response</span>
                         </div>
                     </div>

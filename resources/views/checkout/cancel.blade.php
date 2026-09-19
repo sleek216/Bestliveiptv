@@ -20,7 +20,7 @@
                     
                     @if($order->package)
                     <div class="bg-secondary rounded p-3 mb-4">
-                        <p class="mb-1"><strong>Package:</strong> {{ $order->package->name }}</p>
+                        <p class="mb-1"><strong>Service:</strong> {{ $order->package->name }}</p>
                         <p class="mb-0"><strong>Amount:</strong> ${{ number_format($order->amount, 2) }}</p>
                     </div>
                     @endif
@@ -33,7 +33,7 @@
                             <i class="ph-fill ph-chat-circle-text me-2"></i>Chate with Support
                         </button>
                         <a href="{{ route('packages.index') }}" class="btn btn-outline-light">
-                            View Other Packages
+                            View Other Services
                         </a>
                     </div>
                 </div>

@@ -68,7 +68,7 @@
                         <td>
                             @if($referral->converted_at && $commission?->order)
                                 <div class="ru-purchase">
-                                    <div class="ru-purchase-title">{{ $commission->order->package->name ?? 'Package' }}</div>
+                                    <div class="ru-purchase-title">{{ $commission->order->package->name ?? 'Service' }}</div>
                                     <div class="ru-purchase-price">${{ number_format($commission->order_amount, 2) }}</div>
                                     <span class="ru-pill ru-pill-success">Purchased</span>
                                 </div>

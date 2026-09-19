@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Order Confirmed - BestLiveIPTV')
+@section('title', 'Order Confirmed - Best Live Services')
 
 @section('content')
 <section class="success-section">
@@ -16,7 +16,7 @@
             
             <!-- Success Message -->
             <h1 class="success-title">Payment Successful!</h1>
-            <p class="success-subtitle">Thank you for your order. Your IPTV subscription is now active.</p>
+            <p class="success-subtitle">Thank you for your order. Your Services subscription is now active.</p>
             
             <!-- Order Details -->
             <div class="order-details">
@@ -57,7 +57,7 @@
                 </div>
                 <h3>Check Your Email!</h3>
                 <p class="email-message">
-                    You will receive an email at <strong>{{ $order->customer_email }}</strong> within the next few minutes with your complete IPTV credentials and setup instructions.
+                    You will receive an email at <strong>{{ $order->customer_email }}</strong> within the next few minutes with your complete Services credentials and setup instructions.
                 </p>
                 <div class="email-checklist">
                     <div class="check-item">
@@ -74,7 +74,7 @@
                     </div>
                     <div class="check-item">
                         <i class="ph-fill ph-check-circle"></i>
-                        <span>Recommended IPTV apps</span>
+                        <span>Recommended Services apps</span>
                     </div>
                 </div>
                 <p class="email-note">
@@ -90,8 +90,8 @@
                     <div class="step-item">
                         <div class="step-number">1</div>
                         <div class="step-content">
-                            <h4>Download an IPTV App</h4>
-                            <p>Install an IPTV player on your device (IPTV Smarters, TiviMate, etc.)</p>
+                            <h4>Download an Services App</h4>
+                            <p>Install an Services player on your device (Services Smarters, TiviMate, etc.)</p>
                         </div>
                     </div>
                     <div class="step-item">

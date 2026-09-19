@@ -76,7 +76,7 @@
         <div class="col-md-6 col-xl-4">
             <div class="card h-100">
                 <div class="card-body">
-                    <h6 class="text-muted mb-2">Active Packages</h6>
+                    <h6 class="text-muted mb-2">Active Services</h6>
                     <h2 class="mb-0">{{ $stats['active_packages'] }}</h2>
                 </div>
             </div>
@@ -106,7 +106,7 @@
                                 <tr>
                                     <th>Order #</th>
                                     <th>Customer</th>
-                                    <th>Package</th>
+                                    <th>Service</th>
                                     <th>Amount</th>
                                     <th>Status</th>
                                     <th>Date</th>

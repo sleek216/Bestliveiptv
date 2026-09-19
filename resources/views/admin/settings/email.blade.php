@@ -83,7 +83,7 @@
                                 <input type="text" class="form-control @error('mail_from_name') is-invalid @enderror" 
                                     id="mail_from_name" name="mail_from_name" 
                                     value="{{ $emailSettings['mail_from_name'] ?? '' }}" 
-                                    placeholder="Best Live IPTV">
+                                    placeholder="Best Live Services">
                                 @error('mail_from_name')
                                     <div class="invalid-feedback">{{ $message }}</div>
                                 @enderror

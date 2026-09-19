@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'My Referrals - BestLiveIPTV')
+@section('title', 'My Referrals - Best Live Services')
 
 @section('content')
 <!-- Page Hero Section -->

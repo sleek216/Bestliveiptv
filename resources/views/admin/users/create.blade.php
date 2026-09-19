@@ -81,7 +81,7 @@
                             <div class="row">
                                 @php
                                     $availablePermissions = [
-                                        'packages' => 'Packages',
+                                        'packages' => 'Services',
                                         'orders' => 'Orders',
                                         'users' => 'Users',
                                         'countries' => 'Countries',

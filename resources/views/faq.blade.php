@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Frequently Asked Questions - BestLiveIPTV')
+@section('title', 'Frequently Asked Questions - Best Live Services')
 
 @section('content')
 <!-- Page Hero -->
@@ -20,7 +20,7 @@
                 </h1>
                 
                 <p class="page-hero-subtitle">
-                    Find answers to common questions about our IPTV service, 
+                    Find answers to common questions about our Services service, 
                     setup guides, payment options, and technical support.
                 </p>
                 
@@ -108,11 +108,11 @@
                     <div class="faq-list">
                         <div class="faq-item">
                             <button class="faq-question">
-                                <span>What is IPTV and how does it work?</span>
+                                <span>What is Services and how does it work?</span>
                                 <i class="ph ph-plus"></i>
                             </button>
                             <div class="faq-answer">
-                                <p>IPTV (Internet Protocol Television) is a service that delivers television content over the internet rather than through traditional satellite or cable formats. Instead of receiving TV programs as broadcast signals through an antenna, satellite dish, or fiber-optic cable, you stream content directly through your internet connection. Our service works with any device that has an internet connection, making it extremely versatile and convenient.</p>
+                                <p>Services (Internet Protocol Television) is a service that delivers television content over the internet rather than through traditional satellite or cable formats. Instead of receiving TV programs as broadcast signals through an antenna, satellite dish, or fiber-optic cable, you stream content directly through your internet connection. Our service works with any device that has an internet connection, making it extremely versatile and convenient.</p>
                             </div>
                         </div>
                         
@@ -162,7 +162,7 @@
                                 <i class="ph ph-plus"></i>
                             </button>
                             <div class="faq-answer">
-                                <p>Our service is compatible with a wide range of devices including: Smart TVs (Samsung, LG, Sony, etc.), Android devices (phones, tablets, TV boxes), iOS devices (iPhone, iPad), Amazon Fire Stick, Nvidia Shield, MAG boxes, Windows and Mac computers, Xbox, and most IPTV players and apps. We provide detailed setup guides for all devices.</p>
+                                <p>Our service is compatible with a wide range of devices including: Smart TVs (Samsung, LG, Sony, etc.), Android devices (phones, tablets, TV boxes), iOS devices (iPhone, iPad), Amazon Fire Stick, Nvidia Shield, MAG boxes, Windows and Mac computers, Xbox, and most Services players and apps. We provide detailed setup guides for all devices.</p>
                             </div>
                         </div>
                         
@@ -292,7 +292,7 @@
                                 <i class="ph ph-plus"></i>
                             </button>
                             <div class="faq-answer">
-                                <p>Our customer support team is available 24/7 through multiple channels: Email (support@bestliveiptv.com), WhatsApp, Telegram (@BestLiveIPTV), and our website contact form. We typically respond within minutes for urgent issues and within a few hours for general inquiries.</p>
+                                <p>Our customer support team is available 24/7 through multiple channels: Email (support@bestliveservice.com), WhatsApp, Telegram (@BestLiveServices), and our website contact form. We typically respond within minutes for urgent issues and within a few hours for general inquiries.</p>
                             </div>
                         </div>
                     </div>

@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title', 'Affiliate Program - BestLiveIPTV')
+@section('title', 'Affiliate Program - Best Live Services')
 
 @section('content')
 <!-- Hero Section -->
@@ -134,7 +134,7 @@
         <div class="section-header" data-aos="fade-up">
             <h2 class="section-title">Why Join Our <span class="text-gradient">Affiliate Program?</span></h2>
             <p class="section-subtitle">
-                Discover the benefits of partnering with the leading IPTV provider
+                Discover the benefits of partnering with the leading Services provider
             </p>
         </div>
         
@@ -291,7 +291,7 @@
             <div style="background: var(--white); border-radius: var(--radius-2xl); padding: 3rem; border: 1px solid var(--gray-100); box-shadow: var(--shadow-lg);">
                 <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; text-align: center;">
                     <div>
-                        <div style="font-size: 0.875rem; color: var(--gray-500); margin-bottom: 0.5rem; font-weight: 500;">Average Package Price</div>
+                        <div style="font-size: 0.875rem; color: var(--gray-500); margin-bottom: 0.5rem; font-weight: 500;">Average Service Price</div>
                         <div style="font-size: 2rem; font-weight: 800; color: var(--gray-900);">$50</div>
                     </div>
                     <div>

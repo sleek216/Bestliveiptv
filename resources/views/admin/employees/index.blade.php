@@ -20,36 +20,7 @@
         </div>
     </div>
 
-    <!-- Dedicated Staff Portal URL Banner -->
-    <div class="card mb-4 border-0 shadow-sm" style="background: linear-gradient(135deg, #1e1b4b 0%, #0f172a 100%); color: #fff;">
-        <div class="card-body p-4">
-            <div class="row align-items-center g-3">
-                <div class="col-lg-7">
-                    <div class="d-flex align-items-center gap-3 mb-2">
-                        <div class="rounded-3 p-2 d-flex align-items-center justify-content-center" style="background: rgba(99, 102, 241, 0.2); border: 1px solid rgba(99, 102, 241, 0.4); width: 44px; height: 44px;">
-                            <i class="bi bi-shield-lock-fill text-indigo fs-5" style="color: #a5b4fc;"></i>
-                        </div>
-                        <div>
-                            <h5 class="mb-0 fw-bold text-white">Dedicated Employee Login Portal</h5>
-                            <small class="text-slate-400" style="color: #94a3b8;">Provide this direct URL to your employees to log in to their assigned work modules</small>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-5">
-                    <div class="input-group">
-                        <input type="text" class="form-control text-white border-0 font-monospace" style="background: rgba(255, 255, 255, 0.1); font-size: 0.85rem;" id="staffLoginUrlInput" value="{{ $staffLoginUrl }}" readonly>
-                        <button class="btn btn-primary" type="button" onclick="copyStaffLoginUrl()" id="copyUrlBtn">
-                            <i class="bi bi-clipboard me-1"></i>Copy URL
-                        </button>
-                        <a href="{{ $staffLoginUrl }}" target="_blank" class="btn btn-outline-light" title="Open staff portal in new tab">
-                            <i class="bi bi-box-arrow-up-right"></i>
-                        </a>
-                    </div>
-                    <small class="d-block mt-1 text-end" style="color: #6ee7b7;" id="copiedFeedback" style="display: none;"></small>
-                </div>
-            </div>
-        </div>
-    </div>
+
 
     <!-- Quick Stats -->
     <div class="row g-4 mb-4">

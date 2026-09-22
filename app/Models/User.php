@@ -159,6 +159,24 @@ class User extends Authenticatable
     }
 
     /**
+     * Check if user has any of the given admin permissions
+     */
+    public function hasAnyAdminPermission(array $permissions): bool
+    {
+        if ($this->isSuperAdmin()) {
+            return true;
+        }
+
+        foreach ($permissions as $permission) {
+            if ($this->hasAdminPermission($permission)) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    /**
      * @param  array<int, string>  $permissions
      */
     private function hasAnyPermissionPrefix(array $permissions, string $prefix): bool

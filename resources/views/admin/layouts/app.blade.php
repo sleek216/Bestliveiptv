@@ -299,7 +299,9 @@
             </a>
             @endif
             
+            @if(auth()->user()->hasAnyAdminPermission(['packages', 'orders', 'users', 'manage_employees', 'countries', 'coupons', 'contacts', 'announcement', 'blogs']))
             <div class="nav-section mt-3">Management</div>
+            @endif
             @if(auth()->user()->hasAdminPermission('packages'))
             <a href="{{ route('admin.packages.index') }}" class="nav-link {{ request()->routeIs('admin.packages.*') ? 'active' : '' }}">
                 <i class="bi bi-box-seam"></i>
@@ -364,7 +366,9 @@
             </a>
             @endif
 
+            @if(auth()->user()->hasAnyAdminPermission(['affiliate_overview', 'affiliate_affiliates', 'affiliate_referrals', 'affiliate_commissions', 'affiliate_payouts', 'affiliate_settings']))
             <div class="nav-section mt-3">Affiliate Program</div>
+            @endif
             @if(auth()->user()->hasAdminPermission('affiliate_overview'))
             <a href="{{ route('admin.affiliate.index') }}" class="nav-link {{ request()->routeIs('admin.affiliate.index') ? 'active' : '' }}">
                 <i class="bi bi-graph-up"></i>
@@ -402,7 +406,9 @@
             </a>
             @endif
             
+            @if(auth()->user()->hasAnyAdminPermission(['settings_general', 'settings_stripe', 'settings_nowpayments', 'settings_email', 'settings_security']))
             <div class="nav-section mt-3">Settings</div>
+            @endif
             @if(auth()->user()->hasAdminPermission('settings_general'))
             <a href="{{ route('admin.settings.index') }}" class="nav-link {{ request()->routeIs('admin.settings.index') ? 'active' : '' }}">
                 <i class="bi bi-gear"></i>

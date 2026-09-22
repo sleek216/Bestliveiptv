@@ -52,6 +52,35 @@ Route::get('/fix-affiliate-db', function() {
     return 'Success! Affiliate database columns ensured. You can close this tab and continue testing.';
 });
 
+// AUTO-FIX ROUTE FOR EMPLOYEE & RBAC DB COLUMNS
+Route::get('/fix-employee-db', function() {
+    try {
+        if (!\Illuminate\Support\Facades\Schema::hasColumn('users', 'designation')) {
+            \Illuminate\Support\Facades\Schema::table('users', function (\Illuminate\Database\Schema\Blueprint $table) {
+                $table->string('designation')->nullable()->after('name');
+            });
+        }
+        if (!\Illuminate\Support\Facades\Schema::hasColumn('users', 'is_active')) {
+            \Illuminate\Support\Facades\Schema::table('users', function (\Illuminate\Database\Schema\Blueprint $table) {
+                $table->boolean('is_active')->default(true)->after('is_admin');
+            });
+        }
+        if (!\Illuminate\Support\Facades\Schema::hasColumn('users', 'is_super_admin')) {
+            \Illuminate\Support\Facades\Schema::table('users', function (\Illuminate\Database\Schema\Blueprint $table) {
+                $table->boolean('is_super_admin')->default(false)->after('is_admin');
+            });
+        }
+        if (!\Illuminate\Support\Facades\Schema::hasColumn('users', 'admin_permissions')) {
+            \Illuminate\Support\Facades\Schema::table('users', function (\Illuminate\Database\Schema\Blueprint $table) {
+                $table->text('admin_permissions')->nullable()->after('is_super_admin');
+            });
+        }
+        return 'Success! Employee and RBAC database columns verified and active.';
+    } catch (\Exception $e) {
+        return 'Schema error: ' . $e->getMessage();
+    }
+});
+
 // Home
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
@@ -133,6 +162,17 @@ Route::middleware('guest')->group(function () {
     Route::post('/2fa', [TwoFactorController::class, 'verify'])->name('2fa.verify');
 });
 
+// Dedicated Staff & Employee Portal Routes
+Route::prefix('staff')->group(function () {
+    Route::get('login', [App\Http\Controllers\StaffAuthController::class, 'showLogin'])->name('staff.login');
+    Route::post('login', [App\Http\Controllers\StaffAuthController::class, 'login'])->name('staff.login.post');
+    Route::post('logout', [App\Http\Controllers\StaffAuthController::class, 'logout'])->name('staff.logout');
+});
+
+// Employee Portal Friendly Aliases
+Route::get('employee/login', fn() => redirect()->route('staff.login'))->name('employee.login');
+Route::get('employee', fn() => redirect()->route('staff.login'));
+
 Route::middleware('auth')->group(function () {
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
     Route::get('/profile', [AuthController::class, 'showProfile'])->name('profile');
@@ -152,9 +192,26 @@ Route::middleware('auth')->group(function () {
 
 // Admin Routes
 Route::prefix('admin')->middleware('admin')->name('admin.')->group(function () {
-    // Dashboard (Accessible by all admins)
+    // Dashboard (Accessible by authorized admins & staff)
     Route::get('/', [AdminDashboardController::class, 'index'])->name('dashboard');
-    Route::get('/export/system-backup', [AdminSystemExportController::class, 'download'])->name('export.system-backup');
+    
+    // System Backup Export
+    Route::get('/export/system-backup', [AdminSystemExportController::class, 'download'])
+        ->middleware('admin.permission:export_backup')
+        ->name('export.system-backup');
+
+    // Staff & Employee Management
+    Route::middleware('admin.permission:manage_employees')->group(function () {
+        Route::get('employees', [App\Http\Controllers\Admin\EmployeeController::class, 'index'])->name('employees.index');
+        Route::get('employees/create', [App\Http\Controllers\Admin\EmployeeController::class, 'create'])->name('employees.create');
+        Route::post('employees', [App\Http\Controllers\Admin\EmployeeController::class, 'store'])->name('employees.store');
+        Route::get('employees/{employee}/edit', [App\Http\Controllers\Admin\EmployeeController::class, 'edit'])->name('employees.edit');
+        Route::put('employees/{employee}', [App\Http\Controllers\Admin\EmployeeController::class, 'update'])->name('employees.update');
+        Route::delete('employees/{employee}', [App\Http\Controllers\Admin\EmployeeController::class, 'destroy'])->name('employees.destroy');
+        Route::post('employees/{employee}/toggle-status', [App\Http\Controllers\Admin\EmployeeController::class, 'toggleStatus'])->name('employees.toggle-status');
+        Route::post('employees/{employee}/reset-password', [App\Http\Controllers\Admin\EmployeeController::class, 'resetPassword'])->name('employees.reset-password');
+        Route::get('settings/employees', fn() => redirect()->route('admin.employees.index'))->name('settings.employees');
+    });
 
     // Packages Management
     Route::middleware('admin.permission:packages')->group(function () {
@@ -200,17 +257,28 @@ Route::prefix('admin')->middleware('admin')->name('admin.')->group(function () {
 
     // Settings
     Route::middleware('admin.permission:settings')->group(function () {
-        Route::get('settings', [AdminSettingsController::class, 'index'])->name('settings.index');
-        Route::put('settings', [AdminSettingsController::class, 'update'])->name('settings.update');
-        Route::get('settings/stripe', [AdminSettingsController::class, 'stripe'])->name('settings.stripe');
-        Route::put('settings/stripe', [AdminSettingsController::class, 'updateStripe'])->name('settings.update-stripe');
-        Route::post('settings/stripe/test', [AdminSettingsController::class, 'testStripe'])->name('settings.test-stripe');
-        Route::get('settings/email', [AdminSettingsController::class, 'email'])->name('settings.email');
-        Route::put('settings/email', [AdminSettingsController::class, 'updateEmail'])->name('settings.update-email');
-        Route::post('settings/email/test', [AdminSettingsController::class, 'testEmail'])->name('settings.test-email');
-        Route::get('settings/nowpayments', [AdminSettingsController::class, 'nowpayments'])->name('settings.nowpayments');
-        Route::put('settings/nowpayments', [AdminSettingsController::class, 'updateNowpayments'])->name('settings.update-nowpayments');
-        Route::post('settings/nowpayments/test', [AdminSettingsController::class, 'testNowpayments'])->name('settings.test-nowpayments');
+        Route::middleware('admin.permission:settings_general')->group(function () {
+            Route::get('settings', [AdminSettingsController::class, 'index'])->name('settings.index');
+            Route::put('settings', [AdminSettingsController::class, 'update'])->name('settings.update');
+        });
+
+        Route::middleware('admin.permission:settings_stripe')->group(function () {
+            Route::get('settings/stripe', [AdminSettingsController::class, 'stripe'])->name('settings.stripe');
+            Route::put('settings/stripe', [AdminSettingsController::class, 'updateStripe'])->name('settings.update-stripe');
+            Route::post('settings/stripe/test', [AdminSettingsController::class, 'testStripe'])->name('settings.test-stripe');
+        });
+
+        Route::middleware('admin.permission:settings_email')->group(function () {
+            Route::get('settings/email', [AdminSettingsController::class, 'email'])->name('settings.email');
+            Route::put('settings/email', [AdminSettingsController::class, 'updateEmail'])->name('settings.update-email');
+            Route::post('settings/email/test', [AdminSettingsController::class, 'testEmail'])->name('settings.test-email');
+        });
+
+        Route::middleware('admin.permission:settings_nowpayments')->group(function () {
+            Route::get('settings/nowpayments', [AdminSettingsController::class, 'nowpayments'])->name('settings.nowpayments');
+            Route::put('settings/nowpayments', [AdminSettingsController::class, 'updateNowpayments'])->name('settings.update-nowpayments');
+            Route::post('settings/nowpayments/test', [AdminSettingsController::class, 'testNowpayments'])->name('settings.test-nowpayments');
+        });
     });
     
     // Coupons Management
@@ -226,8 +294,10 @@ Route::prefix('admin')->middleware('admin')->name('admin.')->group(function () {
     });
 
     // Blog Management
-    Route::resource('blogs', App\Http\Controllers\Admin\BlogController::class);
-    Route::post('blogs/{blog}/toggle-active', [App\Http\Controllers\Admin\BlogController::class, 'toggleActive'])->name('blogs.toggle-active');
+    Route::middleware('admin.permission:blogs')->group(function () {
+        Route::resource('blogs', App\Http\Controllers\Admin\BlogController::class);
+        Route::post('blogs/{blog}/toggle-active', [App\Http\Controllers\Admin\BlogController::class, 'toggleActive'])->name('blogs.toggle-active');
+    });
     
     // Security & 2FA
     Route::middleware('admin.permission:security')->group(function () {

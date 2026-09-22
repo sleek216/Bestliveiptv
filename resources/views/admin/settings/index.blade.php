@@ -53,7 +53,7 @@
             </div>
 
             <div class="col-lg-4">
-                <div class="card">
+                <div class="card mb-4">
                     <div class="card-body">
                         <button type="submit" class="btn btn-primary w-100">
                             <i class="bi bi-check-lg me-2"></i>Save Settings
@@ -61,13 +61,36 @@
                     </div>
                 </div>
 
-                <div class="card">
+                @if(auth()->user()->isSuperAdmin() || auth()->user()->hasAdminPermission('manage_employees'))
+                <!-- Employee & Staff Management Shortcut Card -->
+                <div class="card mb-4 border-0 shadow-sm" style="background: linear-gradient(135deg, #1e1b4b 0%, #0f172a 100%); color: #fff;">
+                    <div class="card-header bg-transparent border-0 text-white pb-0">
+                        <div class="d-flex align-items-center gap-2">
+                            <i class="bi bi-people-fill text-indigo fs-5" style="color: #a5b4fc;"></i>
+                            <h6 class="mb-0 fw-bold text-white">Staff & Employees</h6>
+                        </div>
+                    </div>
                     <div class="card-body">
-                        <button type="submit" class="btn btn-primary w-100">
-                            <i class="bi bi-check-lg me-2"></i>Save Settings
-                        </button>
+                        <p class="small text-slate-300 mb-3" style="color: #cbd5e1;">
+                            Delegate sections and configure custom rights for each of your employees.
+                        </p>
+                        
+                        <div class="p-2 rounded mb-3" style="background: rgba(255, 255, 255, 0.08); font-size: 0.78rem;">
+                            <div class="text-muted text-uppercase mb-1" style="font-size: 0.7rem; color: #94a3b8 !important;">Employee Login URL:</div>
+                            <code class="text-white user-select-all d-block text-truncate" style="color: #a5b4fc;">{{ url('/staff/login') }}</code>
+                        </div>
+
+                        <div class="d-grid gap-2">
+                            <a href="{{ route('admin.employees.create') }}" class="btn btn-sm btn-primary">
+                                <i class="bi bi-person-plus me-1"></i>Add New Employee
+                            </a>
+                            <a href="{{ route('admin.employees.index') }}" class="btn btn-sm btn-outline-light">
+                                <i class="bi bi-gear me-1"></i>Manage Employee Permissions
+                            </a>
+                        </div>
                     </div>
                 </div>
+                @endif
             </div>
         </div>
     </form>

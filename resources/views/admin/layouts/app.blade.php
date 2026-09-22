@@ -291,11 +291,13 @@
         </div>
         
         <nav class="sidebar-nav">
+            @if(auth()->user()->isSuperAdmin() || auth()->user()->hasAdminPermission('dashboard'))
             <div class="nav-section">Main</div>
             <a href="{{ route('admin.dashboard') }}" class="nav-link {{ request()->routeIs('admin.dashboard') ? 'active' : '' }}">
                 <i class="bi bi-speedometer2"></i>
                 <span>Dashboard</span>
             </a>
+            @endif
             
             <div class="nav-section mt-3">Management</div>
             @if(auth()->user()->hasAdminPermission('packages'))
@@ -320,6 +322,12 @@
                 @if(($adminUnreadUsersCount ?? 0) > 0)
                     <span class="badge bg-danger ms-auto">{{ $adminUnreadUsersCount }}</span>
                 @endif
+            </a>
+            @endif
+            @if(auth()->user()->isSuperAdmin() || auth()->user()->hasAdminPermission('manage_employees'))
+            <a href="{{ route('admin.employees.index') }}" class="nav-link {{ request()->routeIs('admin.employees.*') ? 'active' : '' }}">
+                <i class="bi bi-person-badge-fill"></i>
+                <span>Staff & Employees</span>
             </a>
             @endif
             @if(auth()->user()->hasAdminPermission('countries'))
@@ -349,10 +357,12 @@
                 <span>Announcement Bar</span>
             </a>
             @endif
+            @if(auth()->user()->hasAdminPermission('blogs'))
             <a href="{{ route('admin.blogs.index') }}" class="nav-link {{ request()->routeIs('admin.blogs.*') ? 'active' : '' }}">
                 <i class="bi bi-journal-text"></i>
                 <span>Blog Management</span>
             </a>
+            @endif
 
             <div class="nav-section mt-3">Affiliate Program</div>
             @if(auth()->user()->hasAdminPermission('affiliate_overview'))
@@ -453,17 +463,33 @@
             <div class="user-dropdown dropdown">
                 <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown">
                     <div class="user-avatar">{{ substr(auth()->user()->name, 0, 1) }}</div>
-                    <span>{{ auth()->user()->name }}</span>
-                    <i class="bi bi-chevron-down"></i>
+                    <div class="d-none d-sm-block text-start">
+                        <div class="fw-semibold lh-1">{{ auth()->user()->name }}</div>
+                        <small class="text-muted" style="font-size: 0.72rem;">
+                            @if(auth()->user()->isSuperAdmin())
+                                <span class="text-primary fw-bold">Super Admin</span>
+                            @else
+                                <span>{{ auth()->user()->designation ?? 'Staff Member' }}</span>
+                            @endif
+                        </small>
+                    </div>
+                    <i class="bi bi-chevron-down ms-1"></i>
                 </a>
-                <ul class="dropdown-menu dropdown-menu-end">
+                <ul class="dropdown-menu dropdown-menu-end shadow-sm border-0">
+                    <li class="px-3 py-2 border-bottom d-sm-none">
+                        <div class="fw-bold">{{ auth()->user()->name }}</div>
+                        <small class="text-muted">{{ auth()->user()->isSuperAdmin() ? 'Super Admin' : (auth()->user()->designation ?? 'Staff Member') }}</small>
+                    </li>
                     <li><a class="dropdown-item" href="{{ route('profile') }}"><i class="bi bi-person me-2"></i>Profile</a></li>
+                    @if(auth()->user()->isSuperAdmin() || auth()->user()->hasAdminPermission('manage_employees'))
+                    <li><a class="dropdown-item" href="{{ route('admin.employees.index') }}"><i class="bi bi-person-badge me-2"></i>Staff Management</a></li>
+                    @endif
                     <li><hr class="dropdown-divider"></li>
                     <li>
-                        <form action="{{ route('logout') }}" method="POST">
+                        <form action="{{ route('staff.logout') }}" method="POST">
                             @csrf
                             <button type="submit" class="dropdown-item text-danger">
-                                <i class="bi bi-box-arrow-right me-2"></i>Logout
+                                <i class="bi bi-box-arrow-right me-2"></i>Log Out
                             </button>
                         </form>
                     </li>

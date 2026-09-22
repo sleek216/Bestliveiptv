@@ -104,6 +104,13 @@ class AuthController extends Controller
         if (Auth::validate($credentials)) {
             $user = User::where('email', $credentials['email'])->first();
 
+            // If user is a staff member and account is suspended, block login
+            if ($user && $user->isAdmin() && !$user->isActive()) {
+                return back()->withErrors([
+                    'email' => 'Your staff account has been deactivated. Please contact your administrator.',
+                ])->onlyInput('email');
+            }
+
             if ($user->google2fa_enabled) {
                 session()->put([
                     '2fa_user_id' => $user->id,
@@ -119,9 +126,10 @@ class AuthController extends Controller
             // Update last login
             $user->update(['last_login_at' => now()]);
 
-            // Redirect admin to admin dashboard
+            // Redirect admin/staff to their first permitted admin section
             if ($user->isAdmin()) {
-                return redirect()->intended(route('admin.dashboard'));
+                $targetRoute = $user->getFirstPermittedAdminRoute();
+                return redirect()->intended(route($targetRoute));
             }
 
             return redirect()->intended(route('home'));

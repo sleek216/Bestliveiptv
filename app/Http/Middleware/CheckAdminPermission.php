@@ -17,17 +17,37 @@ class CheckAdminPermission
     {
         // Check if user is logged in
         if (!auth()->check()) {
-            return redirect()->route('login')->with('error', 'Please login to access admin panel.');
+            return redirect()->route('staff.login')->with('error', 'Please login to access staff dashboard.');
         }
 
-        // Check if user is an admin
-        if (!auth()->user()->isAdmin()) {
-            abort(403, 'Access denied. Admin privileges required.');
+        $user = auth()->user();
+
+        // Check if user is an admin or employee
+        if (!$user->isAdmin()) {
+            abort(403, 'Access denied. Staff privileges required.');
+        }
+
+        // Check if user account is active
+        if (!$user->isActive()) {
+            auth()->logout();
+            $request->session()->invalidate();
+            $request->session()->regenerateToken();
+            return redirect()->route('staff.login')->with('error', 'Your staff account is inactive. Please contact the administrator.');
         }
 
         // Check if user has specific permission
-        if (!auth()->user()->hasAdminPermission($permission)) {
-            abort(403, 'Access denied. You do not have permission to access the ' . ucfirst($permission) . ' section.');
+        if (!$user->hasAdminPermission($permission)) {
+            if ($request->expectsJson()) {
+                return response()->json([
+                    'success' => false,
+                    'message' => 'Access denied. You do not have permission to access the ' . ucfirst(str_replace('_', ' ', $permission)) . ' section.'
+                ], 403);
+            }
+
+            return response()->view('errors.403', [
+                'permission' => ucfirst(str_replace('_', ' ', $permission)),
+                'raw_permission' => $permission,
+            ], 403);
         }
 
         return $next($request);

@@ -17,7 +17,9 @@ class User extends Authenticatable
         'password',
         'phone',
         'country',
+        'designation',
         'is_admin',
+        'is_active',
         'last_login_at',
         'referred_by',
         'referral_code',
@@ -38,6 +40,7 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
             'is_admin' => 'boolean',
+            'is_active' => 'boolean',
             'last_login_at' => 'datetime',
             'google2fa_enabled' => 'boolean',
             'google2fa_secret' => 'encrypted',
@@ -60,6 +63,64 @@ class User extends Authenticatable
     public function isSuperAdmin(): bool
     {
         return $this->is_super_admin === true;
+    }
+
+    /**
+     * Check if user is an employee / staff member
+     */
+    public function isEmployee(): bool
+    {
+        return $this->isAdmin() && !$this->isSuperAdmin();
+    }
+
+    /**
+     * Check if user account is active
+     */
+    public function isActive(): bool
+    {
+        return $this->is_active !== false;
+    }
+
+    /**
+     * Get the first permitted admin route for redirection upon login
+     */
+    public function getFirstPermittedAdminRoute(): string
+    {
+        if ($this->isSuperAdmin()) {
+            return 'admin.dashboard';
+        }
+
+        $routesMap = [
+            'dashboard' => 'admin.dashboard',
+            'orders' => 'admin.orders.index',
+            'packages' => 'admin.packages.index',
+            'users' => 'admin.users.index',
+            'contacts' => 'admin.contacts.index',
+            'coupons' => 'admin.coupons.index',
+            'blogs' => 'admin.blogs.index',
+            'announcement' => 'admin.announcement.index',
+            'countries' => 'admin.countries.index',
+            'affiliate_overview' => 'admin.affiliate.index',
+            'affiliate_affiliates' => 'admin.affiliate.affiliates',
+            'affiliate_referrals' => 'admin.affiliate.referrals',
+            'affiliate_commissions' => 'admin.affiliate.commissions',
+            'affiliate_payouts' => 'admin.affiliate.payouts',
+            'affiliate_settings' => 'admin.affiliate.settings',
+            'settings_general' => 'admin.settings.index',
+            'settings_stripe' => 'admin.settings.stripe',
+            'settings_nowpayments' => 'admin.settings.nowpayments',
+            'settings_email' => 'admin.settings.email',
+            'settings_security' => 'admin.security.index',
+            'manage_employees' => 'admin.employees.index',
+        ];
+
+        foreach ($routesMap as $permission => $routeName) {
+            if ($this->hasAdminPermission($permission)) {
+                return $routeName;
+            }
+        }
+
+        return 'admin.dashboard';
     }
 
     /**

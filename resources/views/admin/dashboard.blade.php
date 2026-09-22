@@ -26,9 +26,11 @@
                 </select>
             </form>
         </div>
+        @if(auth()->user()->isSuperAdmin() || auth()->user()->hasAdminPermission('export_backup'))
         <a href="{{ route('admin.export.system-backup') }}" class="btn btn-success">
             <i class="bi bi-file-earmark-spreadsheet me-2"></i>Download System Backup
         </a>
+        @endif
     </div>
 
     <!-- Stats Cards -->

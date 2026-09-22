@@ -8,11 +8,26 @@ use App\Models\Package;
 use App\Models\User;
 use App\Models\Contact;
 use Illuminate\View\View;
+use Illuminate\Http\RedirectResponse;
 
 class DashboardController extends Controller
 {
-    public function index(): View
+    public function index(): View|RedirectResponse
     {
+        $user = auth()->user();
+
+        // If employee lacks dashboard permission, redirect to their first permitted section
+        if ($user && !$user->isSuperAdmin() && !$user->hasAdminPermission('dashboard')) {
+            $firstRoute = $user->getFirstPermittedAdminRoute();
+            if ($firstRoute && $firstRoute !== 'admin.dashboard') {
+                return redirect()->route($firstRoute);
+            }
+            return response()->view('errors.403', [
+                'permission' => 'Dashboard Overview',
+                'raw_permission' => 'dashboard'
+            ], 403);
+        }
+
         $filter = request('filter', 'all_time');
         $startDate = null;
 

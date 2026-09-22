@@ -77,7 +77,8 @@ class StaffAuthController extends Controller
         // Redirect directly to first permitted section
         $targetRoute = $user->getFirstPermittedAdminRoute();
 
-        return redirect()->intended(route($targetRoute));
+        return redirect()->intended(route($targetRoute))
+            ->with('success', 'Welcome back, ' . $user->name . '!');
     }
 
     /**

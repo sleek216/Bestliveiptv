@@ -140,10 +140,43 @@ class EmployeeController extends Controller
     }
 
     /**
+     * Ensure database columns exist (safe for cPanel environments)
+     */
+    protected function ensureEmployeeColumnsExist(): void
+    {
+        try {
+            if (!\Illuminate\Support\Facades\Schema::hasColumn('users', 'designation')) {
+                \Illuminate\Support\Facades\Schema::table('users', function ($table) {
+                    $table->string('designation')->nullable()->after('name');
+                });
+            }
+            if (!\Illuminate\Support\Facades\Schema::hasColumn('users', 'is_active')) {
+                \Illuminate\Support\Facades\Schema::table('users', function ($table) {
+                    $table->boolean('is_active')->default(true)->after('is_admin');
+                });
+            }
+            if (!\Illuminate\Support\Facades\Schema::hasColumn('users', 'is_super_admin')) {
+                \Illuminate\Support\Facades\Schema::table('users', function ($table) {
+                    $table->boolean('is_super_admin')->default(false)->after('is_admin');
+                });
+            }
+            if (!\Illuminate\Support\Facades\Schema::hasColumn('users', 'admin_permissions')) {
+                \Illuminate\Support\Facades\Schema::table('users', function ($table) {
+                    $table->text('admin_permissions')->nullable()->after('is_super_admin');
+                });
+            }
+        } catch (\Throwable $e) {
+            // Ignore if schema modification fails or already handled
+        }
+    }
+
+    /**
      * Display a listing of employees
      */
     public function index(Request $request): View
     {
+        $this->ensureEmployeeColumnsExist();
+
         $query = User::where('is_admin', true)
             ->where(function ($q) {
                 $q->where('is_super_admin', false)
@@ -220,17 +253,27 @@ class EmployeeController extends Controller
             'permissions.*' => 'string',
         ]);
 
-        $employee = User::create([
+        $this->ensureEmployeeColumnsExist();
+
+        $employeeData = [
             'name' => $validated['name'],
             'email' => $validated['email'],
-            'designation' => $validated['designation'] ?? 'Staff Member',
             'phone' => $validated['phone'] ?? null,
             'password' => Hash::make($validated['password']),
             'is_admin' => true,
             'is_super_admin' => false,
-            'is_active' => $request->boolean('is_active', true),
             'admin_permissions' => $request->input('permissions', []),
-        ]);
+        ];
+
+        if (\Illuminate\Support\Facades\Schema::hasColumn('users', 'designation')) {
+            $employeeData['designation'] = $validated['designation'] ?? 'Staff Member';
+        }
+
+        if (\Illuminate\Support\Facades\Schema::hasColumn('users', 'is_active')) {
+            $employeeData['is_active'] = $request->boolean('is_active', true);
+        }
+
+        $employee = User::create($employeeData);
 
         return redirect()
             ->route('admin.employees.index')
@@ -277,15 +320,23 @@ class EmployeeController extends Controller
             'permissions.*' => 'string',
         ]);
 
+        $this->ensureEmployeeColumnsExist();
+
         $updateData = [
             'name' => $validated['name'],
             'email' => $validated['email'],
-            'designation' => $validated['designation'] ?? 'Staff Member',
             'phone' => $validated['phone'] ?? null,
             'is_admin' => true,
-            'is_active' => $request->boolean('is_active', true),
             'admin_permissions' => $request->input('permissions', []),
         ];
+
+        if (\Illuminate\Support\Facades\Schema::hasColumn('users', 'designation')) {
+            $updateData['designation'] = $validated['designation'] ?? 'Staff Member';
+        }
+
+        if (\Illuminate\Support\Facades\Schema::hasColumn('users', 'is_active')) {
+            $updateData['is_active'] = $request->boolean('is_active', true);
+        }
 
         if (!empty($validated['password'])) {
             $updateData['password'] = Hash::make($validated['password']);

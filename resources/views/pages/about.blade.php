@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
-@section('title', 'About Us - Best Live Services')
+@section('title', 'About Live IPTV Now – Our IPTV Streaming Service')
+@section('meta_description', 'Learn about Live IPTV Now, our streaming platform, customer support, technology, international coverage and commitment to reliable service.')
 
 @section('content')
 <!-- Page Hero -->

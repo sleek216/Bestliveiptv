@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
-@section('title', 'Blog - Best Live Services Services News & Updates')
+@section('title', 'IPTV Blog – Streaming Guides, Tips & Latest Updates')
+@section('meta_description', 'Explore IPTV guides, streaming tips, device tutorials, channel updates and helpful advice for getting more from your live TV experience.')
 
 @section('content')
 <!-- Page Hero Section -->

@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
-@section('title', 'Refund Policy - Best Live Services')
+@section('title', 'IPTV Refund Policy – Live IPTV Now')
+@section('meta_description', 'Read the Live IPTV Now refund policy, including eligibility, refund requests, processing times and important subscription terms.')
 
 @section('content')
 <!-- Page Hero -->

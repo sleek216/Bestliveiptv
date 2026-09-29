@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
-@section('title', 'Best Live Services - #1 Premium Services Service | 20,000+ Channels')
+@section('title', 'Live IPTV Service – 40,000+ Channels in HD & 4K')
+@section('meta_description', 'Stream 40,000+ live TV channels, sports, movies and shows in HD & 4K. Enjoy flexible IPTV plans, multi-device streaming and 24/7 support.')
 
 @section('content')
 <!-- Hero Section -->

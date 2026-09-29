@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
-@section('title', 'Privacy Policy - Best Live Services')
+@section('title', 'Privacy Policy – Live IPTV Now')
+@section('meta_description', 'Learn how Live IPTV Now collects, uses, protects and manages your personal information, account data and privacy rights.')
 
 @section('content')
 <!-- Page Hero -->

@@ -4,12 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
     <meta name="theme-color" content="#0066FF">
-    <meta name="description" content="Best Live Services - Premium Services Service with 20,000+ Channels, HD & 4K Quality, 99.9% Uptime. Get the best streaming experience worldwide.">
-    <meta name="keywords" content="Services, streaming, live TV, 4K Services, HD channels, premium Services">
-    <meta name="author" content="Best Live Services">
+    <meta name="description" content="@yield('meta_description', 'Stream 40,000+ live TV channels, sports, movies and shows in HD & 4K. Enjoy flexible IPTV plans, multi-device streaming and 24/7 support.')">
+    <meta name="keywords" content="@yield('meta_keywords', 'IPTV, streaming, live TV, 4K IPTV, HD channels, premium IPTV')">
+    <meta name="author" content="Live IPTV Now">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     
-    <title>@yield('title', 'Best Live Services - Premium Streaming Service')</title>
+    <title>@yield('title', 'Live IPTV Service – 40,000+ Channels in HD & 4K')</title>
+    <link rel="canonical" href="{{ url()->current() }}">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ url()->current() }}">
+    <meta property="og:title" content="@yield('title', 'Live IPTV Service – 40,000+ Channels in HD & 4K')">
+    <meta property="og:description" content="@yield('meta_description', 'Stream 40,000+ live TV channels, sports, movies and shows in HD & 4K. Enjoy flexible IPTV plans, multi-device streaming and 24/7 support.')">
     
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="{{ asset('images/favicon.svg') }}">

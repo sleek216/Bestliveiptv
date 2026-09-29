@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
-@section('title', 'Become a Reseller - Best Live Services')
+@section('title', 'IPTV Reseller Program – White Label & Wholesale')
+@section('meta_description', 'Start an IPTV reseller business with wholesale credits, a white-label panel, automated activation and dedicated reseller support.')
 
 @section('content')
 <!-- Page Hero Section -->

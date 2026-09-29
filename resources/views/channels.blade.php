@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
-@section('title', 'Live TV Channels - Best Live Services')
+@section('title', 'IPTV Channels – 40,000+ Live TV Channels Worldwide')
+@section('meta_description', 'Browse 40,000+ live IPTV channels covering sports, movies, news, entertainment, kids and international TV from 150+ countries.')
 
 @section('content')
 <!-- Page Hero -->

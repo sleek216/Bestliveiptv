@@ -139,6 +139,15 @@ Route::get('/refund', [PageController::class, 'refund'])->name('refund');
 Route::get('/affiliate-program', [PageController::class, 'affiliateInfo'])->name('affiliate.info');
 // Note: /affiliate route is now handled by AffiliateController (user dashboard)
 
+// Sitemap
+Route::get('/sitemap.xml', function () {
+    $path = public_path('sitemap.xml');
+    if (!file_exists($path)) {
+        $path = base_path('public_html/sitemap.xml');
+    }
+    return response()->file($path, ['Content-Type' => 'application/xml']);
+});
+
 // Auth Routes
 Route::middleware('guest')->group(function () {
     Route::get('/login', [AuthController::class, 'showLogin'])->name('login');
